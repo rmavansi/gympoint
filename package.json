@@ -1,0 +1,18 @@
+{
+  "name": "gympoint",
+  "version": "1.0.0",
+  "license": "MIT",
+  "private": true,
+  "workspaces":  [
+      "server/backend",
+      "clients/*",
+      "configs/*"
+    ],
+  "scripts": {
+    "dev": "yarn workspace @server/backend dev",
+    "start": "yarn workspace @clients/user start",
+    "queue": "yarn workspace @server/backend queue",
+    "lint": "eslint ."
+  }
+
+}
