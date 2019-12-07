@@ -1,5 +1,5 @@
 import * as Yup from 'yup';
-import { addMonths, parseISO, areIntervalsOverlapping } from 'date-fns';
+import { addMonths, parseISO } from 'date-fns';
 import Enrollment from '../models/Enrollment';
 import Student from '../models/Student';
 import Membership from '../models/Membership';
@@ -51,26 +51,15 @@ class EnrollmentController {
     }
 
     /**
-     * Check if student has an enrollment overlap
+     * Check if student has an active enrollment
      */
 
     const enroll = await Enrollment.findAll({
       where: { student_id },
     });
 
-    const end_date = addMonths(parseISO(start_date), membership.duration);
-    const sDate = parseISO(start_date);
-
     enroll.map(e => {
-      const startDate = e.start_date;
-      const endDate = e.end_date;
-
-      if (
-        areIntervalsOverlapping(
-          { start: startDate, end: endDate },
-          { start: sDate, end: end_date }
-        )
-      ) {
+      if (e.active) {
         return res.status(400).json({
           error:
             'Student already has a membership at this period, choose another date.',
@@ -83,7 +72,7 @@ class EnrollmentController {
       student_id,
       membership_id,
       start_date: parseISO(start_date),
-      end_date,
+      end_date: addMonths(parseISO(start_date), membership.duration),
       price: membership.price * membership.duration,
     });
 
@@ -115,6 +104,7 @@ class EnrollmentController {
         'start_date',
         'end_date',
         'price',
+        'active',
       ],
       include: [
         {
@@ -129,6 +119,7 @@ class EnrollmentController {
         },
       ],
     });
+
     return res.json(enrollments);
   }
 
@@ -142,7 +133,7 @@ class EnrollmentController {
         .positive()
         .integer()
         .required(),
-      start_date: Yup.date().required(),
+      start_date: Yup.date(),
     });
 
     if (!(await schema.isValid(req.body))) {
