@@ -1,7 +1,7 @@
 import { Router } from 'express';
 
 import UserController from './app/controllers/UserController';
-import StudentController from './app/controllers/StudentController';
+import MemberController from './app/controllers/MemberController';
 import SessionController from './app/controllers/SessionController';
 import MembershipController from './app/controllers/MembershipController';
 import EnrollmentController from './app/controllers/EnrollmentController';
@@ -16,18 +16,20 @@ const routes = new Router();
 routes.post('/users', UserController.store);
 routes.post('/sessions', SessionController.store);
 
-routes.get('/students/:id/checkins', CheckinController.index);
-routes.post('/students/:id/checkins', CheckinController.store);
+routes.get('/members/:id/checkins', CheckinController.index);
+routes.post('/members/:id/checkins', CheckinController.store);
 
-routes.post('/students/:id/help-orders', HelpOrderController.store);
-routes.get('/students/:id/help-orders', HelpOrderController.index);
+routes.post('/members/:id/help-orders', HelpOrderController.store);
+routes.get('/members/:id/help-orders', HelpOrderController.index);
 
 routes.use(authMiddleware);
 
 routes.put('/users', UserController.update);
 
-routes.post('/students', StudentController.store);
-routes.put('/students/:id', StudentController.update);
+routes.get('/members', MemberController.index);
+routes.post('/members', MemberController.store);
+routes.put('/members/:id', MemberController.update);
+routes.delete('/members/:id', MemberController.delete);
 
 routes.get('/memberships', MembershipController.index);
 routes.post('/memberships', MembershipController.store);

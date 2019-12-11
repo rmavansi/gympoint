@@ -14,7 +14,7 @@ class HelpOrder extends Model {
   }
 
   static associate(models) {
-    this.belongsTo(models.Student, { foreignKey: 'student_id', as: 'student' });
+    this.belongsTo(models.Member, { foreignKey: 'member_id', as: 'member' });
   }
 }
 

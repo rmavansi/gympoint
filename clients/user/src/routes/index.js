@@ -8,6 +8,9 @@ import Memberships from '../pages/Memberships';
 import MemberManagement from '../pages/MemberManagement';
 import Questions from '../pages/Questions';
 
+import MemberForm from '../pages/MemberForm';
+import MemberEdit from '../pages/MemberEdit';
+
 export default function Routes() {
   return (
     <Switch>
@@ -16,6 +19,9 @@ export default function Routes() {
       <Route path="/memberships" component={Memberships} isPrivate />
       <Route path="/membermanagement" component={MemberManagement} isPrivate />
       <Route path="/questions" component={Questions} isPrivate />
+
+      <Route path="/memberform" component={MemberForm} isPrivate />
+      <Route path="/memberedit" component={MemberEdit} isPrivate />
     </Switch>
   );
 }

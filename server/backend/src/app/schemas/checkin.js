@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 const CheckinSchema = new mongoose.Schema(
   {
-    student: {
+    member: {
       type: Number,
       required: true,
     },

@@ -1,7 +1,7 @@
 import * as Yup from 'yup';
-import Student from '../models/Student';
+import Member from '../models/Member';
 
-class StudentController {
+class MemberController {
   async store(req, res) {
     const schema = Yup.object().shape({
       name: Yup.string().required(),
@@ -26,15 +26,15 @@ class StudentController {
     /**
      * Check if email is unique
      */
-    const studentExists = await Student.findOne({
+    const memberExists = await Member.findOne({
       where: { email: req.body.email },
     });
 
-    if (studentExists) {
-      return res.status(400).json({ error: 'Student already exists.' });
+    if (memberExists) {
+      return res.status(400).json({ error: 'Member already exists.' });
     }
 
-    const { id, name, email, age, weight, height } = await Student.create(
+    const { id, name, email, age, weight, height } = await Member.create(
       req.body
     );
 
@@ -46,6 +46,11 @@ class StudentController {
       weight,
       height,
     });
+  }
+
+  async index(req, res) {
+    const members = await Member.findAll();
+    return res.json(members);
   }
 
   async update(req, res) {
@@ -69,13 +74,13 @@ class StudentController {
       return res.status(400).json({ error: 'Validation failed.' });
     }
 
-    const student = await Student.findByPk(req.params.id);
+    const member = await Member.findByPk(req.params.id);
 
-    if (!student) {
-      return res.status(400).json({ error: 'Student does not exist.' });
+    if (!member) {
+      return res.status(400).json({ error: 'Member does not exist.' });
     }
 
-    const { id, name, email, age, weight, height } = await student.update(
+    const { id, name, email, age, weight, height } = await member.update(
       req.body
     );
 
@@ -88,6 +93,20 @@ class StudentController {
       height,
     });
   }
+
+  async delete(req, res) {
+    const member = await Member.findByPk(req.params.id);
+
+    if (!member) {
+      return res.status(400).json({ error: 'Member does not exist.' });
+    }
+
+    // return res.json(member);
+
+    await member.destroy();
+
+    return res.json({ message: 'Member deleted successfully!' });
+  }
 }
 
-export default new StudentController();
+export default new MemberController();

@@ -1,7 +1,7 @@
 import * as Yup from 'yup';
 import { addMonths, parseISO } from 'date-fns';
 import Enrollment from '../models/Enrollment';
-import Student from '../models/Student';
+import Member from '../models/Member';
 import Membership from '../models/Membership';
 import Notification from '../schemas/notification';
 
@@ -11,7 +11,7 @@ import Queue from '../../lib/Queue';
 class EnrollmentController {
   async store(req, res) {
     const schema = Yup.object().shape({
-      student_id: Yup.number()
+      member_id: Yup.number()
         .positive()
         .integer()
         .required(),
@@ -26,17 +26,17 @@ class EnrollmentController {
       return res.status(400).json({ error: 'Validation failed.' });
     }
 
-    const { student_id, membership_id, start_date } = req.body;
+    const { member_id, membership_id, start_date } = req.body;
 
     /**
-     * Check if student_id exists
+     * Check if member_id exists
      */
-    const student = await Student.findOne({
-      where: { id: student_id },
+    const member = await Member.findOne({
+      where: { id: member_id },
     });
 
-    if (!student) {
-      return res.status(400).json({ error: 'Student does not exist.' });
+    if (!member) {
+      return res.status(400).json({ error: 'Member does not exist.' });
     }
 
     /**
@@ -51,25 +51,25 @@ class EnrollmentController {
     }
 
     /**
-     * Check if student has an active enrollment
+     * Check if member has an active enrollment
      */
 
     const enroll = await Enrollment.findAll({
-      where: { student_id },
+      where: { member_id },
     });
 
     enroll.map(e => {
       if (e.active) {
         return res.status(400).json({
           error:
-            'Student already has a membership at this period, choose another date.',
+            'Member already has a membership at this period, choose another date.',
         });
       }
       return '';
     });
 
     const enrollment = await Enrollment.create({
-      student_id,
+      member_id,
       membership_id,
       start_date: parseISO(start_date),
       end_date: addMonths(parseISO(start_date), membership.duration),
@@ -77,17 +77,17 @@ class EnrollmentController {
     });
 
     /**
-     * Notify student has a new membership
+     * Notify member has a new membership
      */
     await Notification.create({
-      content: `New membership for ${student.name}`,
-      student: student.id,
+      content: `New membership for ${member.name}`,
+      member: member.id,
     });
 
-    const studentMail = { student, membership, enrollment };
+    const memberMail = { member, membership, enrollment };
 
     await Queue.add(MembershipMail.key, {
-      studentMail,
+      memberMail,
     });
 
     return res.json(enrollment);
@@ -95,11 +95,11 @@ class EnrollmentController {
 
   async index(req, res) {
     const enrollments = await Enrollment.findAll({
-      where: { student_id: req.params.id },
+      where: { member_id: req.params.id },
       order: ['start_date'],
       attributes: [
         'id',
-        'student_id',
+        'member_id',
         'membership_id',
         'start_date',
         'end_date',
@@ -108,8 +108,8 @@ class EnrollmentController {
       ],
       include: [
         {
-          model: Student,
-          as: 'student',
+          model: Member,
+          as: 'member',
           attributes: ['id', 'name'],
         },
         {
@@ -125,7 +125,7 @@ class EnrollmentController {
 
   async update(req, res) {
     const schema = Yup.object().shape({
-      student_id: Yup.number()
+      member_id: Yup.number()
         .positive()
         .integer()
         .required(),
@@ -146,21 +146,21 @@ class EnrollmentController {
       return res.status(400).json({ error: 'Enrollment does not exist.' });
     }
 
-    const { student_id, membership_id, start_date } = req.body;
+    const { member_id, membership_id, start_date } = req.body;
 
     /**
-     * Check if student_id is different
+     * Check if member_id is different
      */
-    if (student_id !== enrollment.membership_id) {
+    if (member_id !== enrollment.membership_id) {
       /**
-       * Check if student_id exists
+       * Check if member_id exists
        */
-      const student = await Student.findOne({
-        where: { id: student_id },
+      const member = await Member.findOne({
+        where: { id: member_id },
       });
 
-      if (!student) {
-        return res.status(400).json({ error: 'Student does not exist.' });
+      if (!member) {
+        return res.status(400).json({ error: 'Member does not exist.' });
       }
     }
 
@@ -176,7 +176,7 @@ class EnrollmentController {
     }
 
     const { id, end_date, price } = await enrollment.update({
-      student_id,
+      member_id,
       membership_id,
       start_date: parseISO(start_date),
       end_date: addMonths(parseISO(start_date), membership.duration),
@@ -185,7 +185,7 @@ class EnrollmentController {
 
     return res.json({
       id,
-      student_id,
+      member_id,
       membership_id,
       start_date,
       end_date,

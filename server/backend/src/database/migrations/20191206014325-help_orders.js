@@ -7,9 +7,9 @@ module.exports = {
         autoIncrement: true,
         allowNull: false,
       },
-      student_id: {
+      member_id: {
         type: Sequelize.INTEGER,
-        references: { model: 'students', key: 'id' },
+        references: { model: 'members', key: 'id' },
         onUpdate: 'CASCADE',
         onDelete: 'SET NULL',
         allowNull: false,

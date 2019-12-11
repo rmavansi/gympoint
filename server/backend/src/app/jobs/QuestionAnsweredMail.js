@@ -10,11 +10,11 @@ class QuestionAnsweredMail {
     const { helpOrderAnswer } = data;
 
     await Mail.sendMail({
-      to: `${helpOrderAnswer.student.name} <${helpOrderAnswer.student.email}>`,
+      to: `${helpOrderAnswer.member.name} <${helpOrderAnswer.member.email}>`,
       subject: 'Question answered',
       template: 'question',
       context: {
-        student: helpOrderAnswer.student.name,
+        member: helpOrderAnswer.member.name,
         question: helpOrderAnswer.question,
         answer: helpOrderAnswer.answer,
         answer_at: format(

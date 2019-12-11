@@ -6,7 +6,7 @@ const NotificationSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    student: {
+    member: {
       type: Number,
       required: true,
     },

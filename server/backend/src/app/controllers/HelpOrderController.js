@@ -1,6 +1,6 @@
 import * as Yup from 'yup';
 import HelpOrder from '../models/HelpOrder';
-import Student from '../models/Student';
+import Member from '../models/Member';
 
 class HelpOrderController {
   async store(req, res) {
@@ -12,22 +12,22 @@ class HelpOrderController {
       return res.status(400).json({ error: 'Validation failed.' });
     }
 
-    const student_id = req.params.id;
+    const member_id = req.params.id;
     const { question, answer, answer_at } = req.body;
 
     /**
-     * Check if student_id exists
+     * Check if member_id exists
      */
-    const student = await Student.findOne({
-      where: { id: student_id },
+    const member = await Member.findOne({
+      where: { id: member_id },
     });
 
-    if (!student) {
-      return res.status(400).json({ error: 'Student does not exist.' });
+    if (!member) {
+      return res.status(400).json({ error: 'Member does not exist.' });
     }
 
     const helpOrder = await HelpOrder.create({
-      student_id,
+      member_id,
       question,
       answer,
       answer_at,
@@ -37,21 +37,21 @@ class HelpOrderController {
   }
 
   async index(req, res) {
-    const student_id = req.params.id;
+    const member_id = req.params.id;
 
     /**
-     * Check if student_id exists
+     * Check if member_id exists
      */
-    const student = await Student.findOne({
-      where: { id: student_id },
+    const member = await Member.findOne({
+      where: { id: member_id },
     });
 
-    if (!student) {
-      return res.status(400).json({ error: 'Student does not exist.' });
+    if (!member) {
+      return res.status(400).json({ error: 'Member does not exist.' });
     }
 
     const helpOrder = await HelpOrder.findAll({
-      where: { student_id },
+      where: { member_id },
     });
 
     return res.status(200).json(helpOrder);

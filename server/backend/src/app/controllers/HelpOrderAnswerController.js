@@ -1,6 +1,6 @@
 import * as Yup from 'yup';
 import HelpOrder from '../models/HelpOrder';
-import Student from '../models/Student';
+import Member from '../models/Member';
 import Queue from '../../lib/Queue';
 import QuestionAnsweredMail from '../jobs/QuestionAnsweredMail';
 import Notification from '../schemas/notification';
@@ -21,8 +21,8 @@ class HelpOrderAnswerController {
     const helpOrder = await HelpOrder.findByPk(req.params.id, {
       include: [
         {
-          model: Student,
-          as: 'student',
+          model: Member,
+          as: 'member',
           attributes: ['name', 'email'],
         },
       ],
@@ -40,11 +40,11 @@ class HelpOrderAnswerController {
     });
 
     /**
-     * Notify student has a new answer
+     * Notify member has a new answer
      */
     await Notification.create({
-      content: `New question from ${helpOrderAnswer.student.name} was answered`,
-      student: helpOrderAnswer.student_id,
+      content: `New question from ${helpOrderAnswer.member.name} was answered`,
+      member: helpOrderAnswer.student_id,
     });
 
     await Queue.add(QuestionAnsweredMail.key, {
@@ -59,8 +59,8 @@ class HelpOrderAnswerController {
       where: { answer: null },
       include: [
         {
-          model: Student,
-          as: 'student',
+          model: Member,
+          as: 'member',
           attributes: ['name', 'email'],
         },
       ],

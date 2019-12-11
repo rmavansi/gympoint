@@ -1,31 +1,31 @@
 import { subDays, addDays, startOfDay, endOfDay } from 'date-fns';
 import Sequelize from 'sequelize';
 import Checkin from '../schemas/checkin';
-import Student from '../models/Student';
+import Member from '../models/Member';
 import Enrollment from '../models/Enrollment';
 
 class CheckinController {
   async store(req, res) {
-    const student_id = req.params.id;
+    const member_id = req.params.id;
 
     /**
-     * Check if student_id exists
+     * Check if member_id exists
      */
-    const student = await Student.findAll({
-      where: { id: student_id },
+    const member = await Member.findAll({
+      where: { id: member_id },
     });
 
-    if (!student) {
-      return res.status(400).json({ error: 'Student does not exist.' });
+    if (!member) {
+      return res.status(400).json({ error: 'Member does not exist.' });
     }
 
     /**
-     * Check if student has an active membership
+     * Check if member has an active membership
      */
 
     const checkActiveEnrollment = await Enrollment.findOne({
       where: {
-        student_id,
+        member_id,
         start_date: { [Sequelize.Op.lte]: new Date() },
         end_date: { [Sequelize.Op.gte]: new Date() },
       },
@@ -34,25 +34,25 @@ class CheckinController {
     if (!checkActiveEnrollment) {
       return res
         .status(400)
-        .json({ error: 'Student does not have an active membership.' });
+        .json({ error: 'Member does not have an active membership.' });
     }
 
     /**
      * Get all checkins within last 7 days
      */
     const check7days = await Checkin.find({
-      student: student_id,
+      member: member_id,
     })
       .gte('createdAt', subDays(endOfDay(new Date()), 7))
       .lte('createdAt', endOfDay(new Date()))
       .countDocuments();
 
     /**
-     * Check if student has more than 5 checkins within last 7 days
+     * Check if member has more than 5 checkins within last 7 days
      */
     if (check7days > 4) {
       const nextCheckin = await Checkin.find({
-        student: student_id,
+        member: member_id,
       })
         .gte('createdAt', subDays(endOfDay(new Date()), 7))
         .lte('createdAt', endOfDay(new Date()))
@@ -65,28 +65,28 @@ class CheckinController {
     }
 
     const checkIn = await Checkin.create({
-      student: student_id,
+      member: member_id,
     });
 
     return res.json(checkIn);
   }
 
   async index(req, res) {
-    const student_id = req.params.id;
+    const member_id = req.params.id;
 
     /**
-     * Check if student_id exists
+     * Check if member_id exists
      */
-    const student = await Student.findOne({
-      where: { id: student_id },
+    const member = await Member.findOne({
+      where: { id: member_id },
     });
 
-    if (!student) {
-      return res.status(400).json({ error: 'Student does not exist.' });
+    if (!member) {
+      return res.status(400).json({ error: 'Member does not exist.' });
     }
 
     const checkin = await Checkin.find({
-      student: student_id,
+      member: member_id,
     }).sort({ createdAt: -1 });
 
     return res.status(200).json(checkin);

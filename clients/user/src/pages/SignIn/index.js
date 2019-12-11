@@ -26,17 +26,15 @@ export default function SignIn() {
   }
   return (
     <Content>
-      <>
-        <img src={logo} alt="Gympoint" />
+      <img src={logo} alt="Gympoint" />
 
-        <Form schema={schema} onSubmit={handleSubmit}>
-          <strong>EMAIL</strong>
-          <Input name="email" type="email" placeholder="example@email.com" />
-          <strong>PASSWORD</strong>
-          <Input name="password" type="password" placeholder="*************" />
-          <button type="submit">{loading ? 'Loading...' : 'Login'}</button>
-        </Form>
-      </>
+      <Form schema={schema} onSubmit={handleSubmit}>
+        <strong>EMAIL</strong>
+        <Input name="email" type="email" placeholder="example@email.com" />
+        <strong>PASSWORD</strong>
+        <Input name="password" type="password" placeholder="*************" />
+        <button type="submit">{loading ? 'Loading...' : 'Login'}</button>
+      </Form>
     </Content>
   );
 }

@@ -7,22 +7,22 @@ class MembershipMail {
   }
 
   async handle({ data }) {
-    const { studentMail } = data;
+    const { memberMail } = data;
 
     await Mail.sendMail({
-      to: `${studentMail.student.name} <${studentMail.student.email}>`,
+      to: `${memberMail.member.name} <${memberMail.member.email}>`,
       subject: 'Gympoint new membership',
       template: 'membership',
       context: {
-        student: studentMail.student.name,
-        title: studentMail.membership.title,
-        price: studentMail.membership.price,
+        member: memberMail.member.name,
+        title: memberMail.membership.title,
+        price: memberMail.membership.price,
         start_date: format(
-          parseISO(studentMail.enrollment.start_date),
+          parseISO(memberMail.enrollment.start_date),
           'do MMMM yyyy'
         ),
         end_date: format(
-          parseISO(studentMail.enrollment.end_date),
+          parseISO(memberMail.enrollment.end_date),
           'do MMMM yyyy'
         ),
       },
