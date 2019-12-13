@@ -1,4 +1,5 @@
 import * as Yup from 'yup';
+import Sequelize from 'sequelize';
 import Member from '../models/Member';
 
 class MemberController {
@@ -49,6 +50,13 @@ class MemberController {
   }
 
   async index(req, res) {
+    if (req.query.name) {
+      const members = await Member.findAll({
+        where: { name: { [Sequelize.Op.substring]: req.query.name } },
+      });
+
+      return res.json(members);
+    }
     const members = await Member.findAll();
     return res.json(members);
   }

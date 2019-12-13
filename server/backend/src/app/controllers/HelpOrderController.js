@@ -52,6 +52,13 @@ class HelpOrderController {
 
     const helpOrder = await HelpOrder.findAll({
       where: { member_id },
+      include: [
+        {
+          model: Member,
+          as: 'member',
+          attributes: ['name'],
+        },
+      ],
     });
 
     return res.status(200).json(helpOrder);

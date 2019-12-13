@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { MdAdd, MdSearch } from 'react-icons/md';
+import { MdAdd } from 'react-icons/md';
 
 import { toast } from 'react-toastify';
 
@@ -16,7 +16,7 @@ export default function Members() {
       setMembers(response.data);
     }
     loadMembers();
-  }, [members]);
+  }, []);
 
   function handleEditMember() {}
 
@@ -24,6 +24,9 @@ export default function Members() {
     try {
       await api.delete(`members/${id}`);
       toast.success('Member deleted successfully!');
+
+      const response = await api.get('members');
+      setMembers(response.data);
     } catch (err) {
       toast.error('Something went wrong!');
       console.tron.log(err);
@@ -33,17 +36,30 @@ export default function Members() {
     history.push('/memberform');
   }
 
+  async function handleSearchChange(event) {
+    const response = await api.get(`members/?name=${event.target.value}`);
+    setMembers(response.data);
+  }
+
   return (
     <Container>
       <Head>
-        <h1>Member List</h1>
+        <h1>Member list</h1>
         <div>
-          <button type="button" onClick={() => handleAddMember()}>
+          <button
+            className="defaultBtn"
+            type="button"
+            onClick={() => handleAddMember()}
+          >
             <MdAdd size={20} className="mdAdd" />
             ADD
           </button>
-          {/* <MdSearch size={20} className="mdSearch" /> */}
-          <Input type="text" placeholder="Search" />
+          <Input
+            className="search"
+            type="text"
+            placeholder="Search"
+            onChange={handleSearchChange}
+          />
         </div>
       </Head>
 
@@ -52,7 +68,7 @@ export default function Members() {
           <li>
             <strong>NAME</strong>
             <strong>EMAIL</strong>
-            <strong className="ageColumn">AGE</strong>
+            <strong className="centerColumn">AGE</strong>
           </li>
         </ul>
         <div>
@@ -60,14 +76,25 @@ export default function Members() {
             <li key={member.id}>
               <span>{member.name}</span>
               <span>{member.email}</span>
-              <span className="ageColumn">{member.age}</span>
-              <button type="button" onClick={() => handleEditMember(member.id)}>
+              <span className="centerColumn">{member.age}</span>
+              <button
+                className="defaultBtn"
+                type="button"
+                onClick={() => handleEditMember(member.id)}
+              >
                 edit
               </button>
               <button
                 type="button"
-                className="deleteBtn"
-                onClick={() => handleDeleteMember(member.id)}
+                className="defaultBtn deleteBtn"
+                onClick={() => {
+                  if (
+                    window.confirm(
+                      'Are you sure you wish to delete this member?'
+                    )
+                  )
+                    handleDeleteMember(member.id);
+                }}
               >
                 delete
               </button>

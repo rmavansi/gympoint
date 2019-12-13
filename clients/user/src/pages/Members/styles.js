@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   padding: 0 120px;
+  min-width: 850px;
 
   strong {
     font-size: 16px;
@@ -19,7 +20,7 @@ export const Head = styled.div`
   margin-top: 15px;
   padding: 15px 0;
 
-  button {
+  button.defaultBtn {
     width: 140px;
   }
 
@@ -28,10 +29,6 @@ export const Head = styled.div`
     align-items: center;
     justify-content: center;
     position: relative;
-
-    .mdAdd {
-      margin-right: 10px;
-    }
   }
 `;
 
@@ -56,7 +53,7 @@ export const ContentWrapper = styled.ul`
     }
   }
 
-  button {
+  button.defaultBtn {
     font-size: 15px;
     color: #4d85ee;
     width: 45px;
@@ -73,7 +70,7 @@ export const ContentWrapper = styled.ul`
     color: #de3b3b;
   }
 
-  .ageColumn {
+  .centerColumn {
     text-align: center;
   }
 `;

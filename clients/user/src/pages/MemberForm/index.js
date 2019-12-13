@@ -19,11 +19,12 @@ export default function MemberForm() {
         height
       });
       history.push('/members');
-      toast.success('Something went right!');
+      toast.success('Member added successfully!');
     } catch (err) {
       toast.error('Something went wrong!');
     }
   }
+
   function handleGoBack() {
     history.push('/members');
   }
@@ -32,17 +33,17 @@ export default function MemberForm() {
     <Container>
       <Form /* schema={} */ onSubmit={handleSave}>
         <Head>
-          <h1>Member Form</h1>
+          <h1>Member form</h1>
           <div className="divBtn">
             <button
+              className="defaultBtn backBtn"
               type="button"
               onClick={() => handleGoBack()}
-              className="backBtn"
             >
               <MdKeyboardArrowLeft size={20} className="mdAdd" />
               BACK
             </button>
-            <button type="submit">
+            <button className="defaultBtn" type="submit">
               <MdCheck size={20} className="mdAdd" />
               SAVE
             </button>
@@ -50,7 +51,7 @@ export default function MemberForm() {
         </Head>
         <DivForm>
           <strong>FULL NAME</strong>
-          <Input name="name" type="text" placeholder="Jon Snow" />
+          <Input name="name" type="text" placeholder="Jon Snows" />
           <strong>EMAIL ADDRESS</strong>
           <Input name="email" type="email" placeholder="example@email.com" />
           <div>

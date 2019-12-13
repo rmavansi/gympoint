@@ -29,7 +29,9 @@ class MembershipController {
   }
 
   async index(req, res) {
-    const memberships = await Membership.findAll();
+    const memberships = await Membership.findAll({
+      order: ['duration'],
+    });
     return res.json(memberships);
   }
 

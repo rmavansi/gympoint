@@ -1,13 +1,13 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 import { signOut } from '~/store/modules/auth/actions';
 
 import logoP1 from '~/assets/logoP1.png';
 import logoP2 from '~/assets/logoP2.png';
 
-import { Container, Content, Profile, Navigation } from './styles';
+import { Container, Content, Profile, Navigation, Teste } from './styles';
 
 export default function Header() {
   const dispatch = useDispatch();
@@ -28,10 +28,10 @@ export default function Header() {
             <p>GYMPOINT</p>
           </div>
           <nav>
-            <Link to="/members">MEMBERS</Link>
-            <Link to="/memberships">MEMBERSHIPS</Link>
-            <Link to="/membermanagement">MEMBER MANAGEMENT</Link>
-            <Link to="/questions">QUESTIONS</Link>
+            <NavLink to="/members">MEMBERS</NavLink>
+            <NavLink to="/memberships">MEMBERSHIPS</NavLink>
+            <NavLink to="/membermanagement">MEMBER MANAGEMENT</NavLink>
+            <NavLink to="/questions">QUESTIONS</NavLink>
           </nav>
         </Navigation>
         <aside>

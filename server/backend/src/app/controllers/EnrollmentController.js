@@ -95,7 +95,7 @@ class EnrollmentController {
 
   async index(req, res) {
     const enrollments = await Enrollment.findAll({
-      where: { member_id: req.params.id },
+      // where: { member_id: req.params.id },
       order: ['start_date'],
       attributes: [
         'id',

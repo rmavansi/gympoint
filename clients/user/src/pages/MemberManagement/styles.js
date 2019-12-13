@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  padding: 0 260px;
+  padding: 0 25px;
   min-width: 850px;
 
   strong {
@@ -19,7 +19,7 @@ export const Head = styled.div`
   justify-content: space-between;
   margin-top: 15px;
   padding: 15px 0;
-  min-width: 630px;
+  min-width: 950px;
 
   button.defaultBtn {
     width: 140px;
@@ -37,15 +37,17 @@ export const ContentWrapper = styled.ul`
   background: white;
   border-radius: 4px;
   padding: 30px 30px 10px 30px;
-  min-width: 630px;
+  min-width: 950px;
 
   li {
     display: grid;
     align-items: center;
-    grid-template-columns: 1fr 1fr 1fr 0.2fr 0.2fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 0.2fr 0.2fr;
+    min-width: 850px;
   }
 
   div {
+    min-width: 850px;
     li {
       padding: 8px 0;
 

@@ -9,7 +9,8 @@ import MemberManagement from '../pages/MemberManagement';
 import Questions from '../pages/Questions';
 
 import MemberForm from '../pages/MemberForm';
-import MemberEdit from '../pages/MemberEdit';
+import MembershipForm from '../pages/MembershipForm';
+import MemberManagementForm from '../pages/MemberManagementForm';
 
 export default function Routes() {
   return (
@@ -21,7 +22,12 @@ export default function Routes() {
       <Route path="/questions" component={Questions} isPrivate />
 
       <Route path="/memberform" component={MemberForm} isPrivate />
-      <Route path="/memberedit" component={MemberEdit} isPrivate />
+      <Route path="/membershipform" component={MembershipForm} isPrivate />
+      <Route
+        path="/membermanagementform"
+        component={MemberManagementForm}
+        isPrivate
+      />
     </Switch>
   );
 }

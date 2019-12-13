@@ -1,9 +1,13 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  height: 64px;
   background: #fff;
   padding: 0 30px;
+  min-width: 850px;
+
+  .active {
+    color: #444444;
+  }
 `;
 
 export const Content = styled.div`
@@ -80,5 +84,11 @@ export const Profile = styled.div`
       text-align: right;
       margin-left: 40px;
     }
+  }
+`;
+
+export const Teste = styled.a`
+  a {
+    color: ${props => (props.active ? '#333333' : '#999999')};
   }
 `;

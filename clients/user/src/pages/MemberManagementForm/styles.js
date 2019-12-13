@@ -1,9 +1,9 @@
 import styled from 'styled-components';
-// import { darken } from 'polished';
 
 export const Container = styled.div`
   margin: 0 270px;
-  min-width: 860px;
+  min-width: 945px;
+
   div.divBtn {
     display: flex;
   }
@@ -33,14 +33,9 @@ export const DivForm = styled.div`
     font-size: 14px;
   }
 
-  input {
-    margin: 10px 0;
-  }
-
   div {
     ul {
       display: flex;
-      justify-content: space-between;
     }
 
     li {
@@ -51,8 +46,28 @@ export const DivForm = styled.div`
         margin-left: 15px;
       }
     }
+
     input {
-      min-width: 235px;
+      margin: 10px 0;
+    }
+    input.dp {
+      width: 200px;
+    }
+  }
+
+  select {
+    margin-top: 10px;
+    /* min-width: 180px; */
+
+    .select-selected:after {
+      position: absolute;
+      content: '';
+      top: 14px;
+      right: 10px;
+      width: 0;
+      height: 0;
+      border: 6px solid transparent;
+      border-color: #fff transparent transparent transparent;
     }
   }
 `;

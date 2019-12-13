@@ -1,14 +1,10 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  padding: 0 260px;
+  padding: 0 366px;
   min-width: 850px;
 
   strong {
-    font-size: 16px;
-  }
-
-  span {
     font-size: 16px;
   }
 `;
@@ -16,33 +12,20 @@ export const Container = styled.div`
 export const Head = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
   margin-top: 15px;
   padding: 15px 0;
-  min-width: 630px;
-
-  button.defaultBtn {
-    width: 140px;
-  }
-
-  div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-  }
 `;
 
 export const ContentWrapper = styled.ul`
   background: white;
   border-radius: 4px;
   padding: 30px 30px 10px 30px;
-  min-width: 630px;
+  min-width: 470px;
 
   li {
     display: grid;
     align-items: center;
-    grid-template-columns: 1fr 1fr 1fr 0.2fr 0.2fr;
+    grid-template-columns: 15fr 1fr;
   }
 
   div {
@@ -55,7 +38,7 @@ export const ContentWrapper = styled.ul`
     }
   }
 
-  button.defaultBtn {
+  button.answer {
     font-size: 15px;
     color: #4d85ee;
     width: 45px;
@@ -68,22 +51,43 @@ export const ContentWrapper = styled.ul`
     }
   }
 
-  button.deleteBtn {
-    color: #de3b3b;
-  }
-
-  .centerColumn {
-    text-align: center;
+  .popup-content {
+    border-radius: 4px;
+    width: 444px !important;
   }
 `;
 
-export const Input = styled.input`
-  margin-left: 15px;
-  height: 35px;
-  width: 240px;
-  margin-top: 4px;
+export const DivPopup = styled.ul`
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+  width: 430px;
 
-  &::placeholder {
+  h3 {
     font-size: 14px;
+    color: #444444;
+    padding: 20px 0 8px 0;
+  }
+
+  span {
+    font-size: 16px;
+    color: #666666;
+    line-height: 26px;
+  }
+
+  textarea {
+    height: 150px;
+    width: 388px;
+  }
+
+  button.defaultBtn {
+    width: 388px;
+    height: 45px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+
+  div {
+    width: 388px;
   }
 `;

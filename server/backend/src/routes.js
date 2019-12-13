@@ -27,6 +27,7 @@ routes.use(authMiddleware);
 routes.put('/users', UserController.update);
 
 routes.get('/members', MemberController.index);
+routes.get('/members/:name', MemberController.index);
 routes.post('/members', MemberController.store);
 routes.put('/members/:id', MemberController.update);
 routes.delete('/members/:id', MemberController.delete);

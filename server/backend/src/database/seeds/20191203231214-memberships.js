@@ -24,6 +24,13 @@ module.exports = {
           created_at: new Date(),
           updated_at: new Date(),
         },
+        {
+          title: 'Schwarzenegger',
+          duration: 500,
+          price: 50,
+          created_at: new Date(),
+          updated_at: new Date(),
+        },
       ],
       {}
     );

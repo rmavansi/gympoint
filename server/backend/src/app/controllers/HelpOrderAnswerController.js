@@ -43,8 +43,8 @@ class HelpOrderAnswerController {
      * Notify member has a new answer
      */
     await Notification.create({
-      content: `New question from ${helpOrderAnswer.member.name} was answered`,
-      member: helpOrderAnswer.student_id,
+      content: `Question from ${helpOrderAnswer.member.name} was answered`,
+      member: helpOrderAnswer.member_id,
     });
 
     await Queue.add(QuestionAnsweredMail.key, {

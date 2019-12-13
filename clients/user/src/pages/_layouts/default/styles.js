@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
   height: 100%;
   background: #eee;
 
-  button {
+  button.defaultBtn {
     background: #ee4d64;
     border: 0;
     display: flex;
@@ -59,5 +59,25 @@ export const Wrapper = styled.div`
   span {
     font-size: 16px;
     color: #666666;
+  }
+
+  textarea {
+    font-size: 16px;
+    color: #333333;
+    padding: 15px;
+  }
+
+  select {
+    padding: 10px 0;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background: #fff;
+    color: #333333;
+  }
+  .mdAdd {
+    margin-right: 10px;
   }
 `;

@@ -19,11 +19,11 @@ class MembershipMail {
         price: memberMail.membership.price,
         start_date: format(
           parseISO(memberMail.enrollment.start_date),
-          'do MMMM yyyy'
+          'MMMM do, yyyy'
         ),
         end_date: format(
           parseISO(memberMail.enrollment.end_date),
-          'do MMMM yyyy'
+          'MMMM do, yyyy'
         ),
       },
     });
