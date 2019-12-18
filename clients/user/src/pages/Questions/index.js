@@ -4,7 +4,6 @@ import { Input, Form } from '@rocketseat/unform';
 import { toast } from 'react-toastify';
 
 import api from '~/services/api';
-import history from '~/services/history';
 
 import { Container, Head, ContentWrapper, DivPopup } from './styles';
 

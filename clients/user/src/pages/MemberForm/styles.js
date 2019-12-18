@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-// import { darken } from 'polished';
 
 export const Container = styled.div`
   margin: 0 270px;

@@ -98,10 +98,6 @@ export default function MemberManagementForm() {
     setSelectedMember(event.target.value);
   }
 
-  const loadOptions = members.map(member => (
-    <option value={member.id}>{member.name}</option>
-  ));
-
   return (
     <Container>
       <Form /* schema={} */ onSubmit={handleSave}>

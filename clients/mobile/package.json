@@ -1,6 +1,33 @@
 {
-    "name": "@clients/mobile",
-    "version": "1.0.0",
-    "private": true
+  "name": "@clients/mobile",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "start": "react-native start --reset-cache",
+    "test": "jest",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@configs/eslint-config-node": "1.0.0",
+    "date-fns": "^2.8.1",
+    "react": "16.9.0",
+    "react-native": "0.61.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.5",
+    "@babel/runtime": "^7.7.6",
+    "@react-native-community/eslint-config": "^0.0.5",
+    "babel-jest": "^24.9.0",
+    "babel-plugin-root-import": "^6.4.1",
+    "eslint": "^6.7.2",
+    "eslint-import-resolver-babel-plugin-root-import": "^1.1.1",
+    "jest": "^24.9.0",
+    "metro-react-native-babel-preset": "^0.57.0",
+    "react-test-renderer": "16.9.0"
+  },
+  "jest": {
+    "preset": "react-native"
   }
-  
+}

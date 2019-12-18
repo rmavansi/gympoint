@@ -5,6 +5,8 @@ node_modules
 .env
 /.pnp
 .pnp.js
+.DS_Store
+.vscode
 
 # testing
 /coverage

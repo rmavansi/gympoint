@@ -86,9 +86,3 @@ export const Profile = styled.div`
     }
   }
 `;
-
-export const Teste = styled.a`
-  a {
-    color: ${props => (props.active ? '#333333' : '#999999')};
-  }
-`;

@@ -7,7 +7,7 @@ import { signOut } from '~/store/modules/auth/actions';
 import logoP1 from '~/assets/logoP1.png';
 import logoP2 from '~/assets/logoP2.png';
 
-import { Container, Content, Profile, Navigation, Teste } from './styles';
+import { Container, Content, Profile, Navigation } from './styles';
 
 export default function Header() {
   const dispatch = useDispatch();
