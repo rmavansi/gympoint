@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/recow/Documents/BootcampRS/DF/gympoint/clients/mobile/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-h720dp-v13/values-h720dp-v13.xml",
+            "map": [
+                {
+                    "source": "/home/recow/.gradle/caches/transforms-2/files-2.1/6f750cee4dd7672e3032e82691cf87cf/res/values-h720dp-v13/values-h720dp-v13.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "66",
+                        "endOffsets": "117"
+                    }
+                }
+            ]
+        }
+    ]
+}

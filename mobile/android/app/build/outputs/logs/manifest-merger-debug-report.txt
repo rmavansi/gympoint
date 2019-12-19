@@ -1,0 +1,217 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/recow/Documents/BootcampRS/DF/gympoint/clients/mobile/android/app/src/main/AndroidManifest.xml:1:1-26:12
+INJECTED from /home/recow/Documents/BootcampRS/DF/gympoint/clients/mobile/android/app/src/main/AndroidManifest.xml:1:1-26:12
+INJECTED from /home/recow/Documents/BootcampRS/DF/gympoint/clients/mobile/android/app/src/main/AndroidManifest.xml:1:1-26:12
+INJECTED from /home/recow/Documents/BootcampRS/DF/gympoint/clients/mobile/android/app/src/main/AndroidManifest.xml:1:1-26:12
+MERGED from /home/recow/Documents/BootcampRS/DF/gympoint/clients/mobile/android/app/src/main/AndroidManifest.xml:1:1-26:12
+MERGED from [:react-native-gesture-handler] /home/recow/Documents/BootcampRS/DF/gympoint/node_modules/react-native-gesture-handler/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:react-native-reanimated] /home/recow/Documents/BootcampRS/DF/gympoint/node_modules/react-native-reanimated/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:react-native-screens] /home/recow/Documents/BootcampRS/DF/gympoint/clients/mobile/node_modules/react-native-screens/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [com.facebook.react:react-native:0.61.5] /home/recow/.gradle/caches/transforms-2/files-2.1/3517463d7b860a8f02e23efe5b12bf06/AndroidManifest.xml:2:1-13:12
+MERGED from [androidx.appcompat:appcompat:1.1.0-rc01] /home/recow/.gradle/caches/transforms-2/files-2.1/6f750cee4dd7672e3032e82691cf87cf/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.1.0-alpha02] /home/recow/.gradle/caches/transforms-2/files-2.1/3bb82276b69f743e0b7080d09653531b/AndroidManifest.xml:17:1-24:12
+MERGED from [org.webkit:android-jsc:r245459] /home/recow/.gradle/caches/transforms-2/files-2.1/d4eda93bf2ba6a4ae2b9d995484c6617/AndroidManifest.xml:2:1-11:12
+MERGED from [com.facebook.fresco:fresco:2.0.0] /home/recow/.gradle/caches/transforms-2/files-2.1/4ec44ef7862a34dd84a0e5eeb1d09ca5/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:2.0.0] /home/recow/.gradle/caches/transforms-2/files-2.1/2ab5158627f882c88d8dd5dd36160663/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:drawee:2.0.0] /home/recow/.gradle/caches/transforms-2/files-2.1/5a3100e451abbba56b0ada9fbf97737f/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:nativeimagefilters:2.0.0] /home/recow/.gradle/caches/transforms-2/files-2.1/168fd515015fdd1f306d1a9d4af60563/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:imagepipeline:2.0.0] /home/recow/.gradle/caches/transforms-2/files-2.1/46d6d0980aa41dd1d917847abcaa2ed1/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:nativeimagetranscoder:2.0.0] /home/recow/.gradle/caches/transforms-2/files-2.1/ed1c1c3aed64aedf6313191b44ba44dc/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:imagepipeline-base:2.0.0] /home/recow/.gradle/caches/transforms-2/files-2.1/0ead872f14cfb6a429d2a15d4935ec56/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.soloader:soloader:0.6.0] /home/recow/.gradle/caches/transforms-2/files-2.1/abd4627e654116c072271b64f0ae8869/AndroidManifest.xml:2:1-13:12
+MERGED from [androidx.fragment:fragment:1.1.0-rc01] /home/recow/.gradle/caches/transforms-2/files-2.1/bd9c668c6a6269b23887acdd98c550d0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0-rc01] /home/recow/.gradle/caches/transforms-2/files-2.1/8485e420c6d1c8b2e61b27c40c629980/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/recow/.gradle/caches/transforms-2/files-2.1/c1a32f76d4ca1806da5665163d91010a/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.transition:transition:1.1.0] /home/recow/.gradle/caches/transforms-2/files-2.1/cf8fb34646013cf8617df17f9e046dc0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/recow/.gradle/caches/transforms-2/files-2.1/a8a9af8b2fc127a41434ecf0765abc74/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /home/recow/.gradle/caches/transforms-2/files-2.1/bbd7e4bfaea0c454b4a7aea495902d3d/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity:1.0.0-rc01] /home/recow/.gradle/caches/transforms-2/files-2.1/2e3fdcd53927d25679bdfa6ed24d291c/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0-rc01] /home/recow/.gradle/caches/transforms-2/files-2.1/4aa28dba97b3495f04c5f105408c911b/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0-rc01] /home/recow/.gradle/caches/transforms-2/files-2.1/9b7e6e6c3320e77d7811d71a65539b4a/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.customview:customview:1.0.0] /home/recow/.gradle/caches/transforms-2/files-2.1/67e283a9f904d4afc6163e675f7de205/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.1.0-rc01] /home/recow/.gradle/caches/transforms-2/files-2.1/4d923a72f3ea402509fad4ea84bdcfa5/AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/recow/.gradle/caches/transforms-2/files-2.1/70baa9d078c153cbbc41dfbf1c12a40b/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/recow/.gradle/caches/transforms-2/files-2.1/d6b02856a1812e6eb954f1246ab66425/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0-rc01] /home/recow/.gradle/caches/transforms-2/files-2.1/c235b0f57aea2d531616c2600222aae5/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0-rc01] /home/recow/.gradle/caches/transforms-2/files-2.1/b4ddc6e6bdef6d38c5d1dec58f6093e3/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0-rc01] /home/recow/.gradle/caches/transforms-2/files-2.1/2de9a94b26f1c1ab812d4eaaac73bf59/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate:1.0.0-rc01] /home/recow/.gradle/caches/transforms-2/files-2.1/8031202deda39c2cb397eefe0534087d/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/recow/.gradle/caches/transforms-2/files-2.1/c2ac7297e722b2e4346ec0102f826132/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/recow/.gradle/caches/transforms-2/files-2.1/2a2bd7630c7dda854aed3c7850c7447d/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/recow/.gradle/caches/transforms-2/files-2.1/f9bad67c79caaf20598a6134d1bae787/AndroidManifest.xml:17:1-22:12
+MERGED from [com.facebook.fresco:fbcore:2.0.0] /home/recow/.gradle/caches/transforms-2/files-2.1/928b4e342a3acd96a5cc6e9f1e401576/AndroidManifest.xml:2:1-9:12
+INJECTED from /home/recow/Documents/BootcampRS/DF/gympoint/clients/mobile/android/app/src/debug/AndroidManifest.xml:2:1-8:12
+INJECTED from /home/recow/Documents/BootcampRS/DF/gympoint/clients/mobile/android/app/src/debug/AndroidManifest.xml:2:1-8:12
+INJECTED from /home/recow/Documents/BootcampRS/DF/gympoint/clients/mobile/android/app/src/debug/AndroidManifest.xml:2:1-8:12
+	package
+		ADDED from /home/recow/Documents/BootcampRS/DF/gympoint/clients/mobile/android/app/src/main/AndroidManifest.xml:2:3-23
+		INJECTED from /home/recow/Documents/BootcampRS/DF/gympoint/clients/mobile/android/app/src/main/AndroidManifest.xml
+		ADDED from /home/recow/Documents/BootcampRS/DF/gympoint/clients/mobile/android/app/src/main/AndroidManifest.xml:2:3-23
+		INJECTED from /home/recow/Documents/BootcampRS/DF/gympoint/clients/mobile/android/app/src/debug/AndroidManifest.xml
+	android:versionName
+		INJECTED from /home/recow/Documents/BootcampRS/DF/gympoint/clients/mobile/android/app/src/main/AndroidManifest.xml
+		ADDED from /home/recow/Documents/BootcampRS/DF/gympoint/clients/mobile/android/app/src/main/AndroidManifest.xml:1:1-26:12
+		INJECTED from /home/recow/Documents/BootcampRS/DF/gympoint/clients/mobile/android/app/src/debug/AndroidManifest.xml
+	xmlns:tools
+		ADDED from /home/recow/Documents/BootcampRS/DF/gympoint/clients/mobile/android/app/src/debug/AndroidManifest.xml:3:5-51
+	android:versionCode
+		INJECTED from /home/recow/Documents/BootcampRS/DF/gympoint/clients/mobile/android/app/src/main/AndroidManifest.xml
+		ADDED from /home/recow/Documents/BootcampRS/DF/gympoint/clients/mobile/android/app/src/main/AndroidManifest.xml:1:1-26:12
+		INJECTED from /home/recow/Documents/BootcampRS/DF/gympoint/clients/mobile/android/app/src/debug/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/recow/Documents/BootcampRS/DF/gympoint/clients/mobile/android/app/src/main/AndroidManifest.xml:1:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /home/recow/Documents/BootcampRS/DF/gympoint/clients/mobile/android/app/src/main/AndroidManifest.xml:4:5-67
+	android:name
+		ADDED from /home/recow/Documents/BootcampRS/DF/gympoint/clients/mobile/android/app/src/main/AndroidManifest.xml:4:22-64
+application
+ADDED from /home/recow/Documents/BootcampRS/DF/gympoint/clients/mobile/android/app/src/main/AndroidManifest.xml:6:5-24:19
+MERGED from /home/recow/Documents/BootcampRS/DF/gympoint/clients/mobile/android/app/src/main/AndroidManifest.xml:6:5-24:19
+MERGED from /home/recow/Documents/BootcampRS/DF/gympoint/clients/mobile/android/app/src/main/AndroidManifest.xml:6:5-24:19
+MERGED from [com.facebook.react:react-native:0.61.5] /home/recow/.gradle/caches/transforms-2/files-2.1/3517463d7b860a8f02e23efe5b12bf06/AndroidManifest.xml:11:5-20
+MERGED from [com.facebook.react:react-native:0.61.5] /home/recow/.gradle/caches/transforms-2/files-2.1/3517463d7b860a8f02e23efe5b12bf06/AndroidManifest.xml:11:5-20
+MERGED from [com.facebook.soloader:soloader:0.6.0] /home/recow/.gradle/caches/transforms-2/files-2.1/abd4627e654116c072271b64f0ae8869/AndroidManifest.xml:11:5-20
+MERGED from [com.facebook.soloader:soloader:0.6.0] /home/recow/.gradle/caches/transforms-2/files-2.1/abd4627e654116c072271b64f0ae8869/AndroidManifest.xml:11:5-20
+MERGED from [androidx.core:core:1.1.0-rc01] /home/recow/.gradle/caches/transforms-2/files-2.1/4d923a72f3ea402509fad4ea84bdcfa5/AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.1.0-rc01] /home/recow/.gradle/caches/transforms-2/files-2.1/4d923a72f3ea402509fad4ea84bdcfa5/AndroidManifest.xml:24:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0-rc01] /home/recow/.gradle/caches/transforms-2/files-2.1/c235b0f57aea2d531616c2600222aae5/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0-rc01] /home/recow/.gradle/caches/transforms-2/files-2.1/c235b0f57aea2d531616c2600222aae5/AndroidManifest.xml:24:5-25:19
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.1.0-rc01] /home/recow/.gradle/caches/transforms-2/files-2.1/4d923a72f3ea402509fad4ea84bdcfa5/AndroidManifest.xml:24:18-86
+	android:label
+		ADDED from /home/recow/Documents/BootcampRS/DF/gympoint/clients/mobile/android/app/src/main/AndroidManifest.xml:8:7-39
+		ADDED from /home/recow/Documents/BootcampRS/DF/gympoint/clients/mobile/android/app/src/main/AndroidManifest.xml:8:7-39
+	tools:ignore
+		ADDED from /home/recow/Documents/BootcampRS/DF/gympoint/clients/mobile/android/app/src/debug/AndroidManifest.xml:7:75-114
+	android:roundIcon
+		ADDED from /home/recow/Documents/BootcampRS/DF/gympoint/clients/mobile/android/app/src/main/AndroidManifest.xml:10:7-52
+		ADDED from /home/recow/Documents/BootcampRS/DF/gympoint/clients/mobile/android/app/src/main/AndroidManifest.xml:10:7-52
+	tools:targetApi
+		ADDED from /home/recow/Documents/BootcampRS/DF/gympoint/clients/mobile/android/app/src/debug/AndroidManifest.xml:7:54-74
+	android:icon
+		ADDED from /home/recow/Documents/BootcampRS/DF/gympoint/clients/mobile/android/app/src/main/AndroidManifest.xml:9:7-41
+		ADDED from /home/recow/Documents/BootcampRS/DF/gympoint/clients/mobile/android/app/src/main/AndroidManifest.xml:9:7-41
+	android:allowBackup
+		ADDED from /home/recow/Documents/BootcampRS/DF/gympoint/clients/mobile/android/app/src/main/AndroidManifest.xml:11:7-34
+		ADDED from /home/recow/Documents/BootcampRS/DF/gympoint/clients/mobile/android/app/src/main/AndroidManifest.xml:11:7-34
+	android:theme
+		ADDED from /home/recow/Documents/BootcampRS/DF/gympoint/clients/mobile/android/app/src/main/AndroidManifest.xml:12:7-38
+		ADDED from /home/recow/Documents/BootcampRS/DF/gympoint/clients/mobile/android/app/src/main/AndroidManifest.xml:12:7-38
+	android:usesCleartextTraffic
+		ADDED from /home/recow/Documents/BootcampRS/DF/gympoint/clients/mobile/android/app/src/debug/AndroidManifest.xml:7:18-53
+	android:name
+		ADDED from /home/recow/Documents/BootcampRS/DF/gympoint/clients/mobile/android/app/src/main/AndroidManifest.xml:7:7-38
+		ADDED from /home/recow/Documents/BootcampRS/DF/gympoint/clients/mobile/android/app/src/main/AndroidManifest.xml:7:7-38
+activity#com.mobile.MainActivity
+ADDED from /home/recow/Documents/BootcampRS/DF/gympoint/clients/mobile/android/app/src/main/AndroidManifest.xml:13:7-22:18
+	android:label
+		ADDED from /home/recow/Documents/BootcampRS/DF/gympoint/clients/mobile/android/app/src/main/AndroidManifest.xml:15:9-41
+	android:windowSoftInputMode
+		ADDED from /home/recow/Documents/BootcampRS/DF/gympoint/clients/mobile/android/app/src/main/AndroidManifest.xml:17:9-51
+	android:configChanges
+		ADDED from /home/recow/Documents/BootcampRS/DF/gympoint/clients/mobile/android/app/src/main/AndroidManifest.xml:16:9-79
+	android:name
+		ADDED from /home/recow/Documents/BootcampRS/DF/gympoint/clients/mobile/android/app/src/main/AndroidManifest.xml:14:9-37
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /home/recow/Documents/BootcampRS/DF/gympoint/clients/mobile/android/app/src/main/AndroidManifest.xml:18:9-21:25
+action#android.intent.action.MAIN
+ADDED from /home/recow/Documents/BootcampRS/DF/gympoint/clients/mobile/android/app/src/main/AndroidManifest.xml:19:13-65
+	android:name
+		ADDED from /home/recow/Documents/BootcampRS/DF/gympoint/clients/mobile/android/app/src/main/AndroidManifest.xml:19:21-62
+category#android.intent.category.LAUNCHER
+ADDED from /home/recow/Documents/BootcampRS/DF/gympoint/clients/mobile/android/app/src/main/AndroidManifest.xml:20:13-73
+	android:name
+		ADDED from /home/recow/Documents/BootcampRS/DF/gympoint/clients/mobile/android/app/src/main/AndroidManifest.xml:20:23-70
+activity#com.facebook.react.devsupport.DevSettingsActivity
+ADDED from /home/recow/Documents/BootcampRS/DF/gympoint/clients/mobile/android/app/src/main/AndroidManifest.xml:23:7-84
+	android:name
+		ADDED from /home/recow/Documents/BootcampRS/DF/gympoint/clients/mobile/android/app/src/main/AndroidManifest.xml:23:17-81
+uses-sdk
+INJECTED from /home/recow/Documents/BootcampRS/DF/gympoint/clients/mobile/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/recow/Documents/BootcampRS/DF/gympoint/clients/mobile/android/app/src/main/AndroidManifest.xml
+INJECTED from /home/recow/Documents/BootcampRS/DF/gympoint/clients/mobile/android/app/src/main/AndroidManifest.xml
+MERGED from [:react-native-gesture-handler] /home/recow/Documents/BootcampRS/DF/gympoint/node_modules/react-native-gesture-handler/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-gesture-handler] /home/recow/Documents/BootcampRS/DF/gympoint/node_modules/react-native-gesture-handler/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-reanimated] /home/recow/Documents/BootcampRS/DF/gympoint/node_modules/react-native-reanimated/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-reanimated] /home/recow/Documents/BootcampRS/DF/gympoint/node_modules/react-native-reanimated/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-screens] /home/recow/Documents/BootcampRS/DF/gympoint/clients/mobile/node_modules/react-native-screens/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-screens] /home/recow/Documents/BootcampRS/DF/gympoint/clients/mobile/node_modules/react-native-screens/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.react:react-native:0.61.5] /home/recow/.gradle/caches/transforms-2/files-2.1/3517463d7b860a8f02e23efe5b12bf06/AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.react:react-native:0.61.5] /home/recow/.gradle/caches/transforms-2/files-2.1/3517463d7b860a8f02e23efe5b12bf06/AndroidManifest.xml:7:5-9:41
+MERGED from [androidx.appcompat:appcompat:1.1.0-rc01] /home/recow/.gradle/caches/transforms-2/files-2.1/6f750cee4dd7672e3032e82691cf87cf/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat:1.1.0-rc01] /home/recow/.gradle/caches/transforms-2/files-2.1/6f750cee4dd7672e3032e82691cf87cf/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.1.0-alpha02] /home/recow/.gradle/caches/transforms-2/files-2.1/3bb82276b69f743e0b7080d09653531b/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.1.0-alpha02] /home/recow/.gradle/caches/transforms-2/files-2.1/3bb82276b69f743e0b7080d09653531b/AndroidManifest.xml:20:5-22:41
+MERGED from [org.webkit:android-jsc:r245459] /home/recow/.gradle/caches/transforms-2/files-2.1/d4eda93bf2ba6a4ae2b9d995484c6617/AndroidManifest.xml:7:5-9:41
+MERGED from [org.webkit:android-jsc:r245459] /home/recow/.gradle/caches/transforms-2/files-2.1/d4eda93bf2ba6a4ae2b9d995484c6617/AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.fresco:fresco:2.0.0] /home/recow/.gradle/caches/transforms-2/files-2.1/4ec44ef7862a34dd84a0e5eeb1d09ca5/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fresco:2.0.0] /home/recow/.gradle/caches/transforms-2/files-2.1/4ec44ef7862a34dd84a0e5eeb1d09ca5/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:2.0.0] /home/recow/.gradle/caches/transforms-2/files-2.1/2ab5158627f882c88d8dd5dd36160663/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:2.0.0] /home/recow/.gradle/caches/transforms-2/files-2.1/2ab5158627f882c88d8dd5dd36160663/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:drawee:2.0.0] /home/recow/.gradle/caches/transforms-2/files-2.1/5a3100e451abbba56b0ada9fbf97737f/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:drawee:2.0.0] /home/recow/.gradle/caches/transforms-2/files-2.1/5a3100e451abbba56b0ada9fbf97737f/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:nativeimagefilters:2.0.0] /home/recow/.gradle/caches/transforms-2/files-2.1/168fd515015fdd1f306d1a9d4af60563/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:nativeimagefilters:2.0.0] /home/recow/.gradle/caches/transforms-2/files-2.1/168fd515015fdd1f306d1a9d4af60563/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline:2.0.0] /home/recow/.gradle/caches/transforms-2/files-2.1/46d6d0980aa41dd1d917847abcaa2ed1/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline:2.0.0] /home/recow/.gradle/caches/transforms-2/files-2.1/46d6d0980aa41dd1d917847abcaa2ed1/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:nativeimagetranscoder:2.0.0] /home/recow/.gradle/caches/transforms-2/files-2.1/ed1c1c3aed64aedf6313191b44ba44dc/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:nativeimagetranscoder:2.0.0] /home/recow/.gradle/caches/transforms-2/files-2.1/ed1c1c3aed64aedf6313191b44ba44dc/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-base:2.0.0] /home/recow/.gradle/caches/transforms-2/files-2.1/0ead872f14cfb6a429d2a15d4935ec56/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-base:2.0.0] /home/recow/.gradle/caches/transforms-2/files-2.1/0ead872f14cfb6a429d2a15d4935ec56/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.soloader:soloader:0.6.0] /home/recow/.gradle/caches/transforms-2/files-2.1/abd4627e654116c072271b64f0ae8869/AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.soloader:soloader:0.6.0] /home/recow/.gradle/caches/transforms-2/files-2.1/abd4627e654116c072271b64f0ae8869/AndroidManifest.xml:7:5-9:41
+MERGED from [androidx.fragment:fragment:1.1.0-rc01] /home/recow/.gradle/caches/transforms-2/files-2.1/bd9c668c6a6269b23887acdd98c550d0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.1.0-rc01] /home/recow/.gradle/caches/transforms-2/files-2.1/bd9c668c6a6269b23887acdd98c550d0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0-rc01] /home/recow/.gradle/caches/transforms-2/files-2.1/8485e420c6d1c8b2e61b27c40c629980/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0-rc01] /home/recow/.gradle/caches/transforms-2/files-2.1/8485e420c6d1c8b2e61b27c40c629980/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/recow/.gradle/caches/transforms-2/files-2.1/c1a32f76d4ca1806da5665163d91010a/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/recow/.gradle/caches/transforms-2/files-2.1/c1a32f76d4ca1806da5665163d91010a/AndroidManifest.xml:20:5-44
+MERGED from [androidx.transition:transition:1.1.0] /home/recow/.gradle/caches/transforms-2/files-2.1/cf8fb34646013cf8617df17f9e046dc0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.transition:transition:1.1.0] /home/recow/.gradle/caches/transforms-2/files-2.1/cf8fb34646013cf8617df17f9e046dc0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/recow/.gradle/caches/transforms-2/files-2.1/a8a9af8b2fc127a41434ecf0765abc74/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/recow/.gradle/caches/transforms-2/files-2.1/a8a9af8b2fc127a41434ecf0765abc74/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /home/recow/.gradle/caches/transforms-2/files-2.1/bbd7e4bfaea0c454b4a7aea495902d3d/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /home/recow/.gradle/caches/transforms-2/files-2.1/bbd7e4bfaea0c454b4a7aea495902d3d/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.0.0-rc01] /home/recow/.gradle/caches/transforms-2/files-2.1/2e3fdcd53927d25679bdfa6ed24d291c/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.0.0-rc01] /home/recow/.gradle/caches/transforms-2/files-2.1/2e3fdcd53927d25679bdfa6ed24d291c/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0-rc01] /home/recow/.gradle/caches/transforms-2/files-2.1/4aa28dba97b3495f04c5f105408c911b/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0-rc01] /home/recow/.gradle/caches/transforms-2/files-2.1/4aa28dba97b3495f04c5f105408c911b/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0-rc01] /home/recow/.gradle/caches/transforms-2/files-2.1/9b7e6e6c3320e77d7811d71a65539b4a/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0-rc01] /home/recow/.gradle/caches/transforms-2/files-2.1/9b7e6e6c3320e77d7811d71a65539b4a/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.0.0] /home/recow/.gradle/caches/transforms-2/files-2.1/67e283a9f904d4afc6163e675f7de205/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /home/recow/.gradle/caches/transforms-2/files-2.1/67e283a9f904d4afc6163e675f7de205/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.1.0-rc01] /home/recow/.gradle/caches/transforms-2/files-2.1/4d923a72f3ea402509fad4ea84bdcfa5/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.1.0-rc01] /home/recow/.gradle/caches/transforms-2/files-2.1/4d923a72f3ea402509fad4ea84bdcfa5/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/recow/.gradle/caches/transforms-2/files-2.1/70baa9d078c153cbbc41dfbf1c12a40b/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/recow/.gradle/caches/transforms-2/files-2.1/70baa9d078c153cbbc41dfbf1c12a40b/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/recow/.gradle/caches/transforms-2/files-2.1/d6b02856a1812e6eb954f1246ab66425/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/recow/.gradle/caches/transforms-2/files-2.1/d6b02856a1812e6eb954f1246ab66425/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0-rc01] /home/recow/.gradle/caches/transforms-2/files-2.1/c235b0f57aea2d531616c2600222aae5/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0-rc01] /home/recow/.gradle/caches/transforms-2/files-2.1/c235b0f57aea2d531616c2600222aae5/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0-rc01] /home/recow/.gradle/caches/transforms-2/files-2.1/b4ddc6e6bdef6d38c5d1dec58f6093e3/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0-rc01] /home/recow/.gradle/caches/transforms-2/files-2.1/b4ddc6e6bdef6d38c5d1dec58f6093e3/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0-rc01] /home/recow/.gradle/caches/transforms-2/files-2.1/2de9a94b26f1c1ab812d4eaaac73bf59/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0-rc01] /home/recow/.gradle/caches/transforms-2/files-2.1/2de9a94b26f1c1ab812d4eaaac73bf59/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.0.0-rc01] /home/recow/.gradle/caches/transforms-2/files-2.1/8031202deda39c2cb397eefe0534087d/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0-rc01] /home/recow/.gradle/caches/transforms-2/files-2.1/8031202deda39c2cb397eefe0534087d/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/recow/.gradle/caches/transforms-2/files-2.1/c2ac7297e722b2e4346ec0102f826132/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/recow/.gradle/caches/transforms-2/files-2.1/c2ac7297e722b2e4346ec0102f826132/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/recow/.gradle/caches/transforms-2/files-2.1/2a2bd7630c7dda854aed3c7850c7447d/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/recow/.gradle/caches/transforms-2/files-2.1/2a2bd7630c7dda854aed3c7850c7447d/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/recow/.gradle/caches/transforms-2/files-2.1/f9bad67c79caaf20598a6134d1bae787/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/recow/.gradle/caches/transforms-2/files-2.1/f9bad67c79caaf20598a6134d1bae787/AndroidManifest.xml:20:5-44
+MERGED from [com.facebook.fresco:fbcore:2.0.0] /home/recow/.gradle/caches/transforms-2/files-2.1/928b4e342a3acd96a5cc6e9f1e401576/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fbcore:2.0.0] /home/recow/.gradle/caches/transforms-2/files-2.1/928b4e342a3acd96a5cc6e9f1e401576/AndroidManifest.xml:5:5-7:41
+INJECTED from /home/recow/Documents/BootcampRS/DF/gympoint/clients/mobile/android/app/src/debug/AndroidManifest.xml
+INJECTED from /home/recow/Documents/BootcampRS/DF/gympoint/clients/mobile/android/app/src/debug/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /home/recow/Documents/BootcampRS/DF/gympoint/clients/mobile/android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/recow/Documents/BootcampRS/DF/gympoint/clients/mobile/android/app/src/debug/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/recow/Documents/BootcampRS/DF/gympoint/clients/mobile/android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/recow/Documents/BootcampRS/DF/gympoint/clients/mobile/android/app/src/debug/AndroidManifest.xml
+uses-permission#android.permission.SYSTEM_ALERT_WINDOW
+ADDED from /home/recow/Documents/BootcampRS/DF/gympoint/clients/mobile/android/app/src/debug/AndroidManifest.xml:5:5-77
+	android:name
+		ADDED from /home/recow/Documents/BootcampRS/DF/gympoint/clients/mobile/android/app/src/debug/AndroidManifest.xml:5:22-75

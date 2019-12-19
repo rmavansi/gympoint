@@ -2,22 +2,5 @@
   "name": "gympoint",
   "version": "1.0.0",
   "license": "MIT",
-  "private": true,
-  "workspaces": {
-    "packages": [
-      "server/backend",
-      "clients/*",
-      "configs/*"],
-    "nohoist": ["**/react-native", "**/react-native/**"]
-  },
-  "scripts": {
-    "dev": "yarn workspace @server/backend dev",
-    "web": "yarn workspace @clients/user start",
-    "queue": "yarn workspace @server/backend queue",
-    "start": "yarn workspace @clients/mobile start",
-    "android": "yarn workspace @clients/mobile android",
-    "lint": "yarn lint:user & yarn lint:mobile",
-    "lint:user": "yarn workspace @clients/user lint",
-    "lint:mobile": "yarn workspace @clients/mobile lint"
-  }
+  "private": true
 }
