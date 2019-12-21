@@ -87,7 +87,7 @@ class CheckinController {
 
     const checkin = await Checkin.find({
       member: member_id,
-    }).sort({ createdAt: -1 });
+    }).sort({ createdAt: 1 });
 
     return res.status(200).json(checkin);
   }

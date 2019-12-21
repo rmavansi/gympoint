@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/recow/Documents/BootcampRS/DF/gympoint/clients/mobile/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-af/values-af.xml",
+            "outputFile": "/home/recow/Documents/BootcampRS/DF/gympoint/mobile/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-af/values-af.xml",
             "map": [
                 {
                     "source": "/home/recow/.gradle/caches/transforms-2/files-2.1/4d923a72f3ea402509fad4ea84bdcfa5/res/values-af/values-af.xml",
