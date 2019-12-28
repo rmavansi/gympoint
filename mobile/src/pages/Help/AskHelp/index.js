@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Icon from 'react-native-vector-icons/MaterialIcons';
-import { withNavigationFocus } from 'react-navigation';
+import { TouchableOpacity } from 'react-native';
 import { useSelector } from 'react-redux';
 import api from '~/services/api';
 
@@ -8,7 +7,7 @@ import Background from '~/components/Background';
 import Question from '~/components/Question';
 import Header from '~/components/Header';
 
-import { Container, List, CheckInButton } from './styles';
+import { Container, List, NewQuestionButton } from './styles';
 
 export default function AskHelp({ isFocused, navigation }) {
   const [checkins, setCheckins] = useState([]);
@@ -27,9 +26,10 @@ export default function AskHelp({ isFocused, navigation }) {
     <Background>
       <Container>
         <Header />
-        <CheckInButton onPress={() => navigation.navigate('Teste')}>
+        <NewQuestionButton onPress={() => navigation.navigate('NewQuestion')}>
           New question
-        </CheckInButton>
+        </NewQuestionButton>
+
         <List
           data={checkins}
           keyExtractor={item => String(item._id)}
@@ -40,9 +40,17 @@ export default function AskHelp({ isFocused, navigation }) {
   );
 }
 
-AskHelp.navigationOptions = {
-  tabBarLabel: 'Ask question',
-  tabBarIcon: ({ tintColor }) => (
-    <Icon name="live-help" size={20} color={tintColor} />
-  ),
-};
+AskHelp.navigationOptions = ({ navigation }) => ({
+  // title: 'Question',
+  // header: Header,
+  headerShown: false,
+  // headerLeft: () => (
+  //   <TouchableOpacity
+  //     onPress={() => {
+  //       navigation.navigate('Darshboard');
+  //     }}
+  //   >
+  //     <Icon name="chevron-left" size={20} color="#333" />
+  //   </TouchableOpacity>
+  // ),
+});

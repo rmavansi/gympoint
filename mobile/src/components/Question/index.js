@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react';
-import { parseISO, formatRelative } from 'date-fns';
+import { parseISO, formatDistanceToNow } from 'date-fns';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import { TouchableOpacity } from 'react-native';
 
 import {
   Container,
@@ -13,26 +14,30 @@ import {
 } from './styles';
 
 export default function Question({ data }) {
-  const dataParserd = useMemo(() => {
-    return formatRelative(parseISO(data.createdAt), new Date(), {
+  const dataParsered = useMemo(() => {
+    return formatDistanceToNow(parseISO(data.createdAt), new Date(), {
       addSuffix: true,
     });
   }, [data.createdAt]);
 
+  function handleClick() {}
+
   return (
     <Container>
-      <Info>
-        <UpperWrapper>
-          <QuestionStatus answer={data.answer}>
-            <Icon name="check-circle" size={20} />
-            {data.answer ? '  Answered' : '  No answer'}
-          </QuestionStatus>
-          <Time>{dataParserd}</Time>
-        </UpperWrapper>
-        <LowerWrapper>
-          <QuestionText numberOfLines={3}>{data.question}</QuestionText>
-        </LowerWrapper>
-      </Info>
+      <TouchableOpacity>
+        <Info>
+          <UpperWrapper OnPress={handleClick}>
+            <QuestionStatus answer={data.answer}>
+              <Icon name="check-circle" size={20} />
+              {data.answer ? '  Answered' : '  No answer'}
+            </QuestionStatus>
+            <Time>{dataParsered} ago</Time>
+          </UpperWrapper>
+          <LowerWrapper>
+            <QuestionText numberOfLines={3}>{data.question}</QuestionText>
+          </LowerWrapper>
+        </Info>
+      </TouchableOpacity>
     </Container>
   );
 }

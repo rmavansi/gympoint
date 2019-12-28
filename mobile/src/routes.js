@@ -8,7 +8,7 @@ import SignIn from './pages/SignIn';
 
 import CheckIns from './pages/CheckIns';
 import AskHelp from './pages/Help/AskHelp';
-import Teste from './pages/Help/Teste';
+import NewQuestion from './pages/Help/NewQuestion';
 
 export default (signedIn = false) =>
   createAppContainer(
@@ -24,7 +24,7 @@ export default (signedIn = false) =>
               screen: createStackNavigator(
                 {
                   AskHelp,
-                  Teste,
+                  NewQuestion,
                 },
                 {
                   defaultNavigationOptios: {
@@ -39,7 +39,9 @@ export default (signedIn = false) =>
               navigationOptions: {
                 tabBarVisible: true,
                 tabBarLabel: 'Ask question',
-                tabBarIcon: <Icon name="live-help" size={20} />,
+                tabBarIcon: ({ tintColor }) => (
+                  <Icon name="live-help" size={20} color={tintColor} />
+                ),
               },
             },
           },

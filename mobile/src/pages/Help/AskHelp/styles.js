@@ -12,6 +12,6 @@ export const List = styled.FlatList.attrs({
   padding: 0 30px;
 `;
 
-export const CheckInButton = styled(Button)`
+export const NewQuestionButton = styled(Button)`
   margin: 0 30px 20px 30px;
 `;

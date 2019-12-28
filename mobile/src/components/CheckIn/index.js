@@ -1,11 +1,11 @@
 import React, { useMemo } from 'react';
-import { parseISO, formatRelative } from 'date-fns';
+import { parseISO, formatDistanceToNow } from 'date-fns';
 
 import { Container, Info, CheckinList, Time } from './styles';
 
 export default function CheckIn({ data, num }) {
   const dataParserd = useMemo(() => {
-    return formatRelative(parseISO(data.createdAt), new Date(), {
+    return formatDistanceToNow(parseISO(data.createdAt), new Date(), {
       addSuffix: true,
     });
   }, [data.createdAt]);
@@ -14,7 +14,7 @@ export default function CheckIn({ data, num }) {
     <Container>
       <Info>
         <CheckinList>Checkin #{num + 1}</CheckinList>
-        <Time>{dataParserd}</Time>
+        <Time>{dataParserd} ago</Time>
       </Info>
     </Container>
   );

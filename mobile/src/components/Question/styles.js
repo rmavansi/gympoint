@@ -10,7 +10,7 @@ export const Container = styled.View`
 `;
 
 export const Info = styled.View`
-  margin-left: 15px;
+  margin: 0 10px 0 15px;
   /* width: 335px; */
   height: 130px;
 `;
@@ -18,14 +18,18 @@ export const Info = styled.View`
 export const UpperWrapper = styled.View`
   display: flex;
   flex-direction: row;
-  align-items: center;
+  /* align-items: center; */
   justify-content: space-between;
 `;
+
 export const LowerWrapper = styled.View`
   margin-top: 16px;
 `;
 
 export const QuestionStatus = styled.Text`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-weight: bold;
   font-size: 14px;
   color: ${props => (props.answer ? '#42CB59' : '#999')};
