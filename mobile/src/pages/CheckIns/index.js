@@ -13,6 +13,7 @@ import { Container, List, CheckInButton } from './styles';
 
 function CheckIns() {
   const [checkins, setCheckins] = useState([]);
+  const [check, setCheck] = useState('');
   const user = useSelector(state => state.auth.user);
 
   useEffect(() => {
@@ -21,11 +22,12 @@ function CheckIns() {
       setCheckins(response.data);
     }
     loadCheckins();
-  }, [user.id]);
+  }, [user.id, check]);
 
   async function handleNewCheckIn() {
     try {
       await api.post(`/members/${user.id}/checkins`);
+      setCheck('a');
       showMessage({
         message: 'You just check in!',
         type: 'success',

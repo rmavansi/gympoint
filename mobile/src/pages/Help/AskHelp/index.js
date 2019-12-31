@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { TouchableOpacity } from 'react-native';
 import { useSelector } from 'react-redux';
+import { withNavigationFocus } from 'react-navigation';
 import api from '~/services/api';
 
 import Background from '~/components/Background';
@@ -9,18 +9,19 @@ import Header from '~/components/Header';
 
 import { Container, List, NewQuestionButton } from './styles';
 
-export default function AskHelp({ isFocused, navigation }) {
-  const [checkins, setCheckins] = useState([]);
+function AskHelp({ isFocused, navigation }) {
+  const [questions, setQuestions] = useState([]);
   const user = useSelector(state => state.auth.user);
 
   useEffect(() => {
     async function loadCheckins() {
       const response = await api.get(`/members/${user.id}/help-orders`);
-      console.tron.log(response.data);
-      setCheckins(response.data);
+      setQuestions(response.data);
     }
-    loadCheckins();
-  }, [user.id]);
+    if (isFocused) {
+      loadCheckins();
+    }
+  }, [isFocused, user.id]);
 
   return (
     <Background>
@@ -31,9 +32,11 @@ export default function AskHelp({ isFocused, navigation }) {
         </NewQuestionButton>
 
         <List
-          data={checkins}
+          data={questions}
           keyExtractor={item => String(item._id)}
-          renderItem={({ item }) => <Question data={item} />}
+          renderItem={({ item }) => (
+            <Question data={item} navigation={navigation} />
+          )}
         />
       </Container>
     </Background>
@@ -41,16 +44,7 @@ export default function AskHelp({ isFocused, navigation }) {
 }
 
 AskHelp.navigationOptions = ({ navigation }) => ({
-  // title: 'Question',
-  // header: Header,
   headerShown: false,
-  // headerLeft: () => (
-  //   <TouchableOpacity
-  //     onPress={() => {
-  //       navigation.navigate('Darshboard');
-  //     }}
-  //   >
-  //     <Icon name="chevron-left" size={20} color="#333" />
-  //   </TouchableOpacity>
-  // ),
 });
+
+export default withNavigationFocus(AskHelp);

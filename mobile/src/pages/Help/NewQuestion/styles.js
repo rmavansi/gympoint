@@ -5,6 +5,7 @@ import Input from '~/components/Input';
 
 export const Container = styled.SafeAreaView`
   flex: 1;
+  margin-top: 20px;
 `;
 
 export const CheckInButton = styled(Button)`
@@ -23,3 +24,9 @@ export const TInput = styled(Input).attrs({
 `;
 
 export const Form = styled.ScrollView.attrs({})``;
+
+export const HeaderTitle = styled.View`
+  flex: 1;
+  flex-direction: row;
+  justify-content: center;
+`;

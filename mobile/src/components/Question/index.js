@@ -13,18 +13,20 @@ import {
   LowerWrapper,
 } from './styles';
 
-export default function Question({ data }) {
+export default function Question({ data, navigation }) {
   const dataParsered = useMemo(() => {
     return formatDistanceToNow(parseISO(data.createdAt), new Date(), {
       addSuffix: true,
     });
   }, [data.createdAt]);
 
-  function handleClick() {}
+  function handleClick() {
+    navigation.navigate('ReadQuestion', { data });
+  }
 
   return (
     <Container>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={handleClick} data={data}>
         <Info>
           <UpperWrapper OnPress={handleClick}>
             <QuestionStatus answer={data.answer}>

@@ -9,6 +9,7 @@ import SignIn from './pages/SignIn';
 import CheckIns from './pages/CheckIns';
 import AskHelp from './pages/Help/AskHelp';
 import NewQuestion from './pages/Help/NewQuestion';
+import ReadQuestion from './pages/Help/ReadQuestion';
 
 export default (signedIn = false) =>
   createAppContainer(
@@ -21,21 +22,11 @@ export default (signedIn = false) =>
           {
             CheckIns,
             Help: {
-              screen: createStackNavigator(
-                {
-                  AskHelp,
-                  NewQuestion,
-                },
-                {
-                  defaultNavigationOptios: {
-                    headerTransparent: false,
-                    headerTintColor: '#000',
-                    headerLeftContainerStyle: {
-                      marginLeft: 20,
-                    },
-                  },
-                }
-              ),
+              screen: createStackNavigator({
+                AskHelp,
+                NewQuestion,
+                ReadQuestion,
+              }),
               navigationOptions: {
                 tabBarVisible: true,
                 tabBarLabel: 'Ask question',

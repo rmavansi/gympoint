@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 
 import { useSelector } from 'react-redux';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import { TouchableOpacity } from 'react-native';
+import { TouchableOpacity, Image } from 'react-native';
 import { showMessage } from 'react-native-flash-message';
 import Background from '~/components/Background';
 import Header from '~/components/Header';
 import api from '~/services/api';
+import header from '~/assets/header.png';
 
-import { Container, CheckInButton, TInput, Form } from './styles';
+import { Container, CheckInButton, TInput, Form, HeaderTitle } from './styles';
 
 export default function NewQuestion({ navigation }) {
   const user = useSelector(state => state.auth.user);
@@ -33,7 +34,6 @@ export default function NewQuestion({ navigation }) {
   return (
     <Background>
       <Container>
-        <Header />
         <Form>
           <TInput
             name="question"
@@ -52,15 +52,29 @@ export default function NewQuestion({ navigation }) {
 }
 
 NewQuestion.navigationOptions = ({ navigation }) => ({
-  // header: Header,
-  headerShown: false,
-  // headerLeft: () => (
-  //   <TouchableOpacity
-  //     onPress={() => {
-  //       navigation.navigate('AskHelp');
-  //     }}
-  //   >
-  //     <Icon name="chevron-left" size={20} color="#333" />
-  //   </TouchableOpacity>
-  // ),
+  headerTitle: (
+    <HeaderTitle>
+      <Image source={header} />
+    </HeaderTitle>
+  ),
+
+  headerTitleStyle: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+  },
+  headerStyle: {
+    height: 44,
+    marginHorizontal: 20,
+    elevation: 0,
+  },
+  headerLeft: () => (
+    <TouchableOpacity
+      onPress={() => {
+        navigation.navigate('AskHelp');
+      }}
+    >
+      <Icon name="chevron-left" size={20} color="#333" />
+    </TouchableOpacity>
+  ),
+  headerRight: () => <Icon name="chevron-left" size={0} />,
 });
