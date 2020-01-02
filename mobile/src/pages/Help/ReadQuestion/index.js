@@ -3,6 +3,7 @@ import React, { useMemo } from 'react';
 import { formatDistanceToNow, parseISO } from 'date-fns';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { TouchableOpacity, Image } from 'react-native';
+import PropTypes from 'prop-types';
 import Background from '~/components/Background';
 import header from '~/assets/header.png';
 
@@ -73,3 +74,17 @@ ReadQuestion.navigationOptions = ({ navigation }) => ({
   ),
   headerRight: () => <Icon name="chevron-left" size={0} />,
 });
+
+ReadQuestion.propTypes = {
+  navigation: PropTypes.shape({
+    state: PropTypes.shape({
+      params: PropTypes.shape({
+        data: PropTypes.shape({
+          question: PropTypes.string.isRequired,
+          answer: PropTypes.string,
+          createdAt: PropTypes.string.isRequired,
+        }).isRequired,
+      }).isRequired,
+    }).isRequired,
+  }).isRequired,
+};

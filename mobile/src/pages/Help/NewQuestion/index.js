@@ -4,8 +4,8 @@ import { useSelector } from 'react-redux';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { TouchableOpacity, Image } from 'react-native';
 import { showMessage } from 'react-native-flash-message';
+import PropTypes from 'prop-types';
 import Background from '~/components/Background';
-import Header from '~/components/Header';
 import api from '~/services/api';
 import header from '~/assets/header.png';
 
@@ -78,3 +78,9 @@ NewQuestion.navigationOptions = ({ navigation }) => ({
   ),
   headerRight: () => <Icon name="chevron-left" size={0} />,
 });
+
+NewQuestion.propTypes = {
+  navigation: PropTypes.shape({
+    navigate: PropTypes.func.isRequired,
+  }).isRequired,
+};

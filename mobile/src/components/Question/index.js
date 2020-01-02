@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 import { parseISO, formatDistanceToNow } from 'date-fns';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { TouchableOpacity } from 'react-native';
+import PropTypes from 'prop-types';
 
 import {
   Container,
@@ -43,3 +44,14 @@ export default function Question({ data, navigation }) {
     </Container>
   );
 }
+
+Question.propTypes = {
+  data: PropTypes.shape({
+    createdAt: PropTypes.string.isRequired,
+    question: PropTypes.string.isRequired,
+    answer: PropTypes.string,
+  }).isRequired,
+  navigation: PropTypes.shape({
+    navigate: PropTypes.func.isRequired,
+  }).isRequired,
+};

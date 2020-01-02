@@ -9,7 +9,6 @@ export const List = styled.FlatList.attrs({
   showsVerticalScrollIndicator: false,
 })`
   padding: 0 30px;
-  flex-direction: column-reverse;
 `;
 
 export const CheckInButton = styled(Button)`

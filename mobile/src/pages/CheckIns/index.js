@@ -3,6 +3,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import { withNavigationFocus } from 'react-navigation';
 import { showMessage } from 'react-native-flash-message';
 import { useSelector } from 'react-redux';
+import PropTypes from 'prop-types';
 import api from '~/services/api';
 
 import Background from '~/components/Background';
@@ -11,7 +12,7 @@ import Header from '~/components/Header';
 
 import { Container, List, CheckInButton } from './styles';
 
-function CheckIns() {
+function CheckIns({ isFocused }) {
   const [checkins, setCheckins] = useState([]);
   const [check, setCheck] = useState('');
   const user = useSelector(state => state.auth.user);
@@ -21,8 +22,10 @@ function CheckIns() {
       const response = await api.get(`/members/${user.id}/checkins`);
       setCheckins(response.data);
     }
-    loadCheckins();
-  }, [user.id, check]);
+    if (isFocused) {
+      loadCheckins();
+    }
+  }, [user.id, check, isFocused]);
 
   async function handleNewCheckIn() {
     try {
@@ -56,11 +59,21 @@ function CheckIns() {
   );
 }
 
+function SubmitIcon({ tintColor }) {
+  return <Icon name="room" size={20} color={tintColor} />;
+}
+
 CheckIns.navigationOptions = {
   tabBarLabel: 'Check-ins',
-  tabBarIcon: ({ tintColor }) => (
-    <Icon name="room" size={20} color={tintColor} />
-  ),
+  tabBarIcon: SubmitIcon,
+};
+
+CheckIns.propTypes = {
+  isFocused: PropTypes.bool.isRequired,
+};
+
+SubmitIcon.propTypes = {
+  tintColor: PropTypes.string.isRequired,
 };
 
 export default withNavigationFocus(CheckIns);

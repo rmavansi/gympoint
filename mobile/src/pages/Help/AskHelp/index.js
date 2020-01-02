@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { withNavigationFocus } from 'react-navigation';
+import PropTypes from 'prop-types';
 import api from '~/services/api';
 
 import Background from '~/components/Background';
@@ -23,6 +24,9 @@ function AskHelp({ isFocused, navigation }) {
     }
   }, [isFocused, user.id]);
 
+  // console.tron.log('questions');
+  // console.tron.log(questions.id);
+
   return (
     <Background>
       <Container>
@@ -33,7 +37,7 @@ function AskHelp({ isFocused, navigation }) {
 
         <List
           data={questions}
-          keyExtractor={item => String(item._id)}
+          keyExtractor={item => String(item.id)}
           renderItem={({ item }) => (
             <Question data={item} navigation={navigation} />
           )}
@@ -43,8 +47,15 @@ function AskHelp({ isFocused, navigation }) {
   );
 }
 
-AskHelp.navigationOptions = ({ navigation }) => ({
+AskHelp.navigationOptions = {
   headerShown: false,
-});
+};
+
+AskHelp.propTypes = {
+  isFocused: PropTypes.bool.isRequired,
+  navigation: PropTypes.shape({
+    navigate: PropTypes.func.isRequired,
+  }).isRequired,
+};
 
 export default withNavigationFocus(AskHelp);
