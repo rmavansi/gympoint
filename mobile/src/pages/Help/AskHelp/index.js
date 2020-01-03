@@ -24,9 +24,6 @@ function AskHelp({ isFocused, navigation }) {
     }
   }, [isFocused, user.id]);
 
-  // console.tron.log('questions');
-  // console.tron.log(questions.id);
-
   return (
     <Background>
       <Container>

@@ -18,7 +18,12 @@ export default function Memberships() {
     loadMemberships();
   }, [memberships]);
 
-  function handleEditMembership() {}
+  function handleEditMembership(membership) {
+    history.push({
+      pathname: '/membershipform',
+      data: membership
+    });
+  }
 
   async function handleDeleteMembership(id) {
     try {
@@ -69,7 +74,7 @@ export default function Memberships() {
               <button
                 className="defaultBtn"
                 type="button"
-                onClick={() => handleEditMembership(membership.id)}
+                onClick={() => handleEditMembership(membership)}
               >
                 edit
               </button>

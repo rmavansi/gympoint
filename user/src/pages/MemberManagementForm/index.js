@@ -13,21 +13,33 @@ import history from '~/services/history';
 
 import { Container, Head, DivForm } from './styles';
 
-export default function MemberManagementForm() {
+export default function MemberManagementForm(data) {
+  const memberManagement = data.history.location.data;
+
   const [members, setMembers] = useState([]);
   const [memberships, setMemberships] = useState([]);
-  const [selectedMember, setSelectedMember] = useState();
-  const [selectedMembership, setSelectedMembership] = useState();
 
-  const [newDate, setNewDate] = useState(new Date());
+  const [selectedMember, setSelectedMember] = useState(
+    memberManagement ? memberManagement.member.id : ''
+  );
+  const [selectedMembership, setSelectedMembership] = useState(
+    memberManagement ? memberManagement.membership.id : ''
+  );
+
+  const [newDate, setNewDate] = useState(
+    memberManagement ? new Date(memberManagement.start_dat) : new Date()
+  );
 
   const [newDuration, setNewDuration] = useState(0);
 
   const [newEndDate, setEndDate] = useState(
-    format(addMonths(new Date(), 0), 'MM/dd/yyyy')
+    memberManagement
+      ? format(new Date(memberManagement.end_dat), 'MM/dd/yyyy')
+      : format(new Date(), 'MM/dd/yyyy')
   );
-
-  const [totalPrice, setTotalPrice] = useState(0);
+  const [totalPrice, setTotalPrice] = useState(
+    memberManagement ? memberManagement.price : 0
+  );
 
   /**
    * Get all members and memberships from api
@@ -47,16 +59,30 @@ export default function MemberManagementForm() {
    * Save button to insert data into database
    */
   async function handleSave() {
-    try {
-      await api.post('enrollments', {
-        member_id: selectedMember,
-        membership_id: selectedMembership,
-        start_date: newDate
-      });
-      history.push('/membermanagement');
-      toast.success('Membership added to member!');
-    } catch (err) {
-      toast.error('Something went wrong!');
+    if (memberManagement) {
+      try {
+        await api.put(`enrollments/${memberManagement.id}`, {
+          member_id: selectedMember,
+          membership_id: selectedMembership,
+          start_date: newDate
+        });
+        history.push('/membermanagement');
+        toast.success('Membership edited!');
+      } catch (err) {
+        toast.error('Something went wrong!');
+      }
+    } else {
+      try {
+        await api.post('enrollments', {
+          member_id: selectedMember,
+          membership_id: selectedMembership,
+          start_date: newDate
+        });
+        history.push('/membermanagement');
+        toast.success('Membership added to member!');
+      } catch (err) {
+        toast.error('Something went wrong!');
+      }
     }
   }
 
@@ -120,7 +146,11 @@ export default function MemberManagementForm() {
         </Head>
         <DivForm>
           <strong>MEMBER</strong>
-          <select id="names" onChange={handleMemberChange}>
+          <select
+            id="names"
+            onChange={handleMemberChange}
+            value={selectedMember}
+          >
             <option value="" />
             {members.map(member => (
               <option value={member.id}>{member.name}</option>
@@ -131,7 +161,11 @@ export default function MemberManagementForm() {
             <ul>
               <li>
                 <strong>MEMBERSHIP</strong>
-                <select id="titles" onChange={handleMembershipChange}>
+                <select
+                  id="titles"
+                  onChange={handleMembershipChange}
+                  value={selectedMembership}
+                >
                   <option value="" />
                   {memberships.map(membership => (
                     <option value={membership.id}>{membership.title}</option>

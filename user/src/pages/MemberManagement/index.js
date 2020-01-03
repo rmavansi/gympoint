@@ -18,6 +18,8 @@ export default function MemberManagement() {
       const responseFormatted = response.data.map(ree => {
         return {
           ...ree,
+          start_dat: ree.start_date,
+          end_dat: ree.end_date,
           start_date: format(parseISO(ree.start_date), 'MMMM do, yyyy'),
           end_date: format(parseISO(ree.end_date), 'MMMM do, yyyy')
         };
@@ -28,7 +30,12 @@ export default function MemberManagement() {
     loadMembers();
   }, []);
 
-  function handleEditmMemberManagement() {}
+  function handleEditmMemberManagement(memberManagement) {
+    history.push({
+      pathname: '/membermanagementform',
+      data: memberManagement
+    });
+  }
 
   async function handleDeleteMemberManagement(id) {
     try {
@@ -90,7 +97,7 @@ export default function MemberManagement() {
               <button
                 className=" defaultBtn"
                 type="button"
-                onClick={() => handleEditmMemberManagement(memberManagement.id)}
+                onClick={() => handleEditmMemberManagement(memberManagement)}
               >
                 edit
               </button>

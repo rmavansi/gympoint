@@ -8,45 +8,65 @@ import history from '~/services/history';
 
 import { Container, Head, DivForm } from './styles';
 
-export default function MembershipForm() {
+export default function MembershipForm(data) {
+  const membership = data.history.location.data;
+  const [title, setTitle] = useState(membership ? membership.title : '');
   const [totalPrice, setTotalPrice] = useState(0);
-  const [newPrice, setNewPrice] = useState(0);
-  const [months, setMonths] = useState(0);
+  const [price, setPrice] = useState(membership ? membership.price : '');
+  const [duration, setDuration] = useState(
+    membership ? membership.duration : ''
+  );
 
   useEffect(() => {
-    setTotalPrice(newPrice * months);
-  }, [newPrice, months]);
+    setTotalPrice(price * duration);
+  }, [price, duration]);
 
-  async function handleSave({ title, duration, price }) {
-    try {
-      await api.post('memberships', {
-        title,
-        duration,
-        price
-      });
-      history.push('/memberships');
-      toast.success('Membership added successfully!');
-    } catch (err) {
-      toast.error('Something went wrong!');
+  async function handleSave() {
+    if (membership) {
+      try {
+        await api.put(`memberships/${membership.id}`, {
+          title,
+          duration,
+          price
+        });
+        history.push('/memberships');
+        toast.success('Membership edited successfully!');
+      } catch (err) {
+        toast.error('Something went wrong!');
+      }
+    } else {
+      try {
+        await api.post('memberships', {
+          title,
+          duration,
+          price
+        });
+        history.push('/memberships');
+        toast.success('Membership added successfully!');
+      } catch (err) {
+        toast.error('Something went wrong!');
+      }
     }
   }
   function handleGoBack() {
     history.push('/memberships');
   }
-
-  function handleChangeMonth(event) {
-    setMonths(event.target.value);
+  function handleTitleChange(event) {
+    setTitle(event.target.value);
+  }
+  function handleMonthChange(event) {
+    setDuration(event.target.value);
   }
 
-  function handleChangePrice(event) {
-    setNewPrice(event.target.value);
+  function handlePriceChange(event) {
+    setPrice(event.target.value);
   }
 
   return (
     <Container>
       <Form /* schema={} */ onSubmit={handleSave}>
         <Head>
-          <h1>Memberships form</h1>
+          <h1>{membership ? 'Edit membership form' : 'Membership form'}</h1>
           <div className="divBtn">
             <button
               type="button"
@@ -64,20 +84,31 @@ export default function MembershipForm() {
         </Head>
         <DivForm>
           <strong>TITLE</strong>
-          <Input name="title" type="text" />
+          <Input
+            name="title"
+            type="text"
+            value={title}
+            onChange={handleTitleChange}
+          />
           <div>
             <ul>
               <li>
-                <strong>DURATION (months)</strong>
+                <strong>DURATION (duration)</strong>
                 <Input
                   name="duration"
                   type="text"
-                  onChange={handleChangeMonth}
+                  value={duration}
+                  onChange={handleMonthChange}
                 />
               </li>
               <li>
                 <strong>PRICE/MONTH</strong>
-                <Input name="price" type="text" onChange={handleChangePrice} />
+                <Input
+                  name="price"
+                  type="text"
+                  value={price}
+                  onChange={handlePriceChange}
+                />
               </li>
               <li>
                 <strong>TOTAL PRICE</strong>

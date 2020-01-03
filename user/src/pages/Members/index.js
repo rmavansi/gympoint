@@ -18,7 +18,12 @@ export default function Members() {
     loadMembers();
   }, []);
 
-  function handleEditMember() {}
+  function handleEditMember(member) {
+    history.push({
+      pathname: '/memberform',
+      data: member
+    });
+  }
 
   async function handleDeleteMember(id) {
     try {
@@ -80,7 +85,7 @@ export default function Members() {
               <button
                 className="defaultBtn"
                 type="button"
-                onClick={() => handleEditMember(member.id)}
+                onClick={() => handleEditMember(member)}
               >
                 edit
               </button>
