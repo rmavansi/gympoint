@@ -1,0 +1,29 @@
+version: "3"
+services:
+  postgres:
+    image: postgres:11
+    container_name: "postgresgympoint2"
+    environment:
+      - POSTGRES_DB=gympoint
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=gpoint
+    volumes:
+      - "./data2/postgres:/var/lib/postgresql/data2"
+    ports:
+      - 5432:5432
+
+  redis:
+    container_name: 'redisgympoint2'
+    image: 'redis:alpine'
+    ports:
+      - '6379:6379'
+    volumes:
+      - './data/redis:/var/lib/redis/data'
+
+  mongo:
+    container_name: 'mongogympoint2'
+    image: 'mongo'
+    ports:
+      - '27017:27017'
+    volumes:
+      - './data/mongo:/var/lib/mongo/data'
