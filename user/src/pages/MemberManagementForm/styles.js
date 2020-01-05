@@ -1,4 +1,9 @@
 import styled from 'styled-components';
+import AsyncSelect from 'react-select/async';
+import Select from 'react-select';
+
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 
 export const Container = styled.div`
   margin: 0 270px;
@@ -57,7 +62,6 @@ export const DivForm = styled.div`
 
   select {
     margin-top: 10px;
-    /* min-width: 180px; */
 
     .select-selected:after {
       position: absolute;
@@ -69,5 +73,30 @@ export const DivForm = styled.div`
       border: 6px solid transparent;
       border-color: #fff transparent transparent transparent;
     }
+  }
+`;
+
+export const ASelect = styled(AsyncSelect)`
+  padding: 10px 0;
+  font-size: 16px;
+  color: #333333;
+  .css-1hwfws3 {
+    height: 39px;
+  }
+`;
+
+export const DPicker = styled(DatePicker)`
+  width: 100% !important;
+`;
+
+export const Selec = styled(Select)`
+  width: 100% !important;
+  padding: 10px 0;
+  font-size: 16px;
+  height: 41px;
+  min-width: 200px;
+
+  .css-1hwfws3 {
+    height: 39px;
   }
 `;

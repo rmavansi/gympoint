@@ -11,24 +11,25 @@ import { Container, Head, ContentWrapper } from './styles';
 
 export default function MemberManagement() {
   const [memberManagements, setMemberManagements] = useState([]);
+
   useEffect(() => {
     async function loadMembers() {
       const response = await api.get('enrollments/0');
 
-      const responseFormatted = response.data.map(ree => {
+      const responseFormatted = response.data.map(oneResponse => {
         return {
-          ...ree,
-          start_dat: ree.start_date,
-          end_dat: ree.end_date,
-          start_date: format(parseISO(ree.start_date), 'MMMM do, yyyy'),
-          end_date: format(parseISO(ree.end_date), 'MMMM do, yyyy')
+          ...oneResponse,
+          start_dat: oneResponse.start_date,
+          end_dat: oneResponse.end_date,
+          start_date: format(parseISO(oneResponse.start_date), 'MMMM do, yyyy'),
+          end_date: format(parseISO(oneResponse.end_date), 'MMMM do, yyyy')
         };
       });
 
       setMemberManagements(responseFormatted);
     }
     loadMembers();
-  }, []);
+  }, [memberManagements]);
 
   function handleEditmMemberManagement(memberManagement) {
     history.push({
@@ -43,7 +44,6 @@ export default function MemberManagement() {
       toast.success('Item deleted successfully!');
     } catch (err) {
       toast.error('Something went wrong!');
-      console.tron.log(err);
     }
   }
   function handleAddMemberManagement() {

@@ -3,15 +3,11 @@ import { MdCheck, MdKeyboardArrowLeft } from 'react-icons/md';
 import { Form, Input } from '@rocketseat/unform';
 import { toast } from 'react-toastify';
 import { addMonths, format } from 'date-fns';
-import AsyncSelect from 'react-select/async';
-
-import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
 
 import api from '~/services/api';
 import history from '~/services/history';
 
-import { Container, Head, DivForm } from './styles';
+import { Container, Head, DivForm, Selec, ASelect, DPicker } from './styles';
 
 export default function MemberManagementForm(data) {
   const memberManagement = data.history.location.data;
@@ -101,9 +97,11 @@ export default function MemberManagementForm(data) {
   );
 
   function handleMembershipChange(event) {
-    setSelectedMembership(event.target.value);
+    setSelectedMembership(event.value);
     memberships.map(membership => {
-      if (event.target.value === membership.id.toString()) {
+      if (event.value.toString() === membership.id.toString()) {
+        console.tron.log(event.value);
+        console.tron.log('event.value');
         setTotalPrice(membership.price * membership.duration);
         setNewDuration(membership.duration);
         setEndDate(
@@ -155,7 +153,7 @@ export default function MemberManagementForm(data) {
         </Head>
         <DivForm>
           <strong>MEMBER</strong>
-          <AsyncSelect
+          <ASelect
             id="names"
             cacheOptions
             loadOptions={handleLoadMembers}
@@ -167,21 +165,19 @@ export default function MemberManagementForm(data) {
             <ul>
               <li>
                 <strong>MEMBERSHIP</strong>
-                <select
+                <Selec
                   id="titles"
+                  options={memberships.map(member => ({
+                    value: member.id,
+                    label: member.title
+                  }))}
                   onChange={handleMembershipChange}
-                  value={selectedMembership}
-                >
-                  <option value="" />
-                  {memberships.map(membership => (
-                    <option value={membership.id}>{membership.title}</option>
-                  ))}
-                </select>
+                />
               </li>
               <li>
                 <strong>START DATE</strong>
 
-                <DatePicker
+                <DPicker
                   className="dp"
                   showPopperArrow={false}
                   selected={newDate}
