@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { MdAdd } from 'react-icons/md';
 
-import { toast } from 'react-toastify';
-
+import ConfirmAlert from '~/components/ConfirmAlert';
 import api from '~/services/api';
 import history from '~/services/history';
 
@@ -25,15 +24,6 @@ export default function Memberships() {
     });
   }
 
-  async function handleDeleteMembership(id) {
-    try {
-      await api.delete(`memberships/${id}`);
-      toast.success('Membership deleted successfully!');
-    } catch (err) {
-      toast.error('Something went wrong!');
-      console.tron.log(err);
-    }
-  }
   function handleAddMembership() {
     history.push('/membershipform');
   }
@@ -81,14 +71,7 @@ export default function Memberships() {
               <button
                 type="button"
                 className="defaultBtn deleteBtn"
-                onClick={() => {
-                  if (
-                    window.confirm(
-                      'Are you sure you wish to delete this membership?'
-                    )
-                  )
-                    handleDeleteMembership(membership.id);
-                }}
+                onClick={() => ConfirmAlert('memberships', membership.id)}
               >
                 delete
               </button>

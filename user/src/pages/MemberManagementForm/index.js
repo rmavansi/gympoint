@@ -15,10 +15,10 @@ export default function MemberManagementForm(data) {
   const [memberships, setMemberships] = useState([]);
 
   const [selectedMember, setSelectedMember] = useState(
-    memberManagement ? memberManagement.member.id : ''
+    memberManagement ? memberManagement.member : ''
   );
   const [selectedMembership, setSelectedMembership] = useState(
-    memberManagement ? memberManagement.membership.id : ''
+    memberManagement ? memberManagement.membership : ''
   );
 
   const [newDate, setNewDate] = useState(
@@ -54,8 +54,8 @@ export default function MemberManagementForm(data) {
     if (memberManagement) {
       try {
         await api.put(`enrollments/${memberManagement.id}`, {
-          member_id: selectedMember,
-          membership_id: selectedMembership,
+          member_id: selectedMember.id,
+          membership_id: selectedMembership.id,
           start_date: newDate
         });
         history.push('/membermanagement');
@@ -66,8 +66,8 @@ export default function MemberManagementForm(data) {
     } else {
       try {
         await api.post('enrollments', {
-          member_id: selectedMember,
-          membership_id: selectedMembership,
+          member_id: selectedMember.id,
+          membership_id: selectedMembership.id,
           start_date: newDate
         });
         history.push('/membermanagement');
@@ -97,11 +97,9 @@ export default function MemberManagementForm(data) {
   );
 
   function handleMembershipChange(event) {
-    setSelectedMembership(event.value);
+    setSelectedMembership({ id: event.value, title: event.label });
     memberships.map(membership => {
       if (event.value.toString() === membership.id.toString()) {
-        console.tron.log(event.value);
-        console.tron.log('event.value');
         setTotalPrice(membership.price * membership.duration);
         setNewDuration(membership.duration);
         setEndDate(
@@ -115,7 +113,7 @@ export default function MemberManagementForm(data) {
    * Update sectedMember state with new member input
    */
   function handleMemberChange(event) {
-    setSelectedMember(event.value);
+    setSelectedMember({ id: event.value, name: event.label });
   }
 
   /**
@@ -129,6 +127,24 @@ export default function MemberManagementForm(data) {
       label: member.name
     }));
     return inputMembers;
+  }
+
+  function handleMemberValue() {
+    if (selectedMember) {
+      return {
+        value: selectedMember.id,
+        label: selectedMember.name
+      };
+    }
+  }
+
+  function handleMembershipValue() {
+    if (selectedMembership) {
+      return {
+        value: selectedMembership.id,
+        label: selectedMembership.title
+      };
+    }
   }
 
   return (
@@ -158,6 +174,7 @@ export default function MemberManagementForm(data) {
             cacheOptions
             loadOptions={handleLoadMembers}
             defaultOptions
+            defaultValue={handleMemberValue()}
             onChange={handleMemberChange}
           />
 
@@ -167,10 +184,11 @@ export default function MemberManagementForm(data) {
                 <strong>MEMBERSHIP</strong>
                 <Selec
                   id="titles"
-                  options={memberships.map(member => ({
-                    value: member.id,
-                    label: member.title
+                  options={memberships.map(membership => ({
+                    value: membership.id,
+                    label: membership.title
                   }))}
+                  defaultValue={handleMembershipValue()}
                   onChange={handleMembershipChange}
                 />
               </li>

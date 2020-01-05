@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { MdAdd, MdCheckCircle } from 'react-icons/md';
 import { format, parseISO } from 'date-fns';
-
-import { toast } from 'react-toastify';
+import ConfirmAlert from '~/components/ConfirmAlert';
 
 import api from '~/services/api';
 import history from '~/services/history';
@@ -38,14 +37,6 @@ export default function MemberManagement() {
     });
   }
 
-  async function handleDeleteMemberManagement(id) {
-    try {
-      await api.delete(`enrollments/${id}`);
-      toast.success('Item deleted successfully!');
-    } catch (err) {
-      toast.error('Something went wrong!');
-    }
-  }
   function handleAddMemberManagement() {
     history.push('/membermanagementform');
   }
@@ -104,12 +95,7 @@ export default function MemberManagement() {
               <button
                 type="button"
                 className="defaultBtn deleteBtn"
-                onClick={() => {
-                  if (
-                    window.confirm('Are you sure you wish to delete this item?')
-                  )
-                    handleDeleteMemberManagement(memberManagement.id);
-                }}
+                onClick={() => ConfirmAlert('enrollments', memberManagement.id)}
               >
                 delete
               </button>
