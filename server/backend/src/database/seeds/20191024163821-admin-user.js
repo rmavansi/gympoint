@@ -6,7 +6,7 @@ module.exports = {
       'users',
       [
         {
-          name: 'Administrador',
+          name: 'Administrator',
           email: 'admin@gympoint.com',
           password_hash: bcrypt.hashSync('123456', 8),
           created_at: new Date(),

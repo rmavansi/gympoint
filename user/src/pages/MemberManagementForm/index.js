@@ -3,7 +3,7 @@ import { MdCheck, MdKeyboardArrowLeft } from 'react-icons/md';
 import { Form, Input } from '@rocketseat/unform';
 import { toast } from 'react-toastify';
 import { addMonths, format } from 'date-fns';
-// import AsyncSelect from 'react-select/async';
+import AsyncSelect from 'react-select/async';
 
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
@@ -16,7 +16,6 @@ import { Container, Head, DivForm } from './styles';
 export default function MemberManagementForm(data) {
   const memberManagement = data.history.location.data;
 
-  const [members, setMembers] = useState([]);
   const [memberships, setMemberships] = useState([]);
 
   const [selectedMember, setSelectedMember] = useState(
@@ -46,9 +45,6 @@ export default function MemberManagementForm(data) {
    */
   useEffect(() => {
     async function loadMembersAndMemberships() {
-      const response = await api.get('members');
-      setMembers(response.data);
-
       const resp = await api.get('memberships');
       setMemberships(resp.data);
     }
@@ -121,7 +117,20 @@ export default function MemberManagementForm(data) {
    * Update sectedMember state with new member input
    */
   function handleMemberChange(event) {
-    setSelectedMember(event.target.value);
+    setSelectedMember(event.value);
+  }
+
+  /**
+   * Load members into async select
+   */
+
+  async function handleLoadMembers(inputValue) {
+    const response = await api.get(`members/?name=${inputValue}`);
+    const inputMembers = response.data.map(member => ({
+      value: member.id,
+      label: member.name
+    }));
+    return inputMembers;
   }
 
   return (
@@ -146,16 +155,13 @@ export default function MemberManagementForm(data) {
         </Head>
         <DivForm>
           <strong>MEMBER</strong>
-          <select
+          <AsyncSelect
             id="names"
+            cacheOptions
+            loadOptions={handleLoadMembers}
+            defaultOptions
             onChange={handleMemberChange}
-            value={selectedMember}
-          >
-            <option value="" />
-            {members.map(member => (
-              <option value={member.id}>{member.name}</option>
-            ))}
-          </select>
+          />
 
           <div>
             <ul>
