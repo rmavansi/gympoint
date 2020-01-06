@@ -82,6 +82,8 @@ yarn
 
 #### Server
 
+Create a .env file just as .env.example on backend folder and complete/change its credentials for postgres, mongo, redis and mailtrap.
+
 ```bash
 # From the root folder
 cd backend
